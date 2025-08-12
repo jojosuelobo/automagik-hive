@@ -53,6 +53,7 @@ dependencies = [
     "pandas>=2.3.1",
     "langwatch>=0.2.9",
     "openinference-instrumentation-agno>=0.1.9",
+    "greenlet>=3.2.3",
 ]
 
 [project.optional-dependencies]
