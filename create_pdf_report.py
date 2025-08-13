@@ -5,11 +5,73 @@ Gerador de Relatório PDF para Análise de Pesquisa
 """
 
 import json
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 from pathlib import Path
 from datetime import datetime
 
+def load_survey_data_and_create_charts(analysis_data):
+    """Load survey data and create inline charts"""
+    
+    # Load the original Excel file
+    file_path = analysis_data['metadata']['file_path']
+    df = pd.read_excel(file_path)
+    
+    # Filter survey columns
+    survey_cols = [col for col in df.columns if 'pesquisa' in col.lower()]
+    survey_data = df[survey_cols].copy()
+    
+    charts_html = {}
+    text_data = {}
+    
+    for col in survey_cols:
+        col_data = survey_data[col].dropna()
+        if len(col_data) == 0:
+            continue
+            
+        stats = analysis_data['statistics'].get(col, {})
+        chart_type = stats.get('chart_type', 'unknown')
+        
+        if chart_type == 'categorical':
+            # Create inline chart for categorical data
+            value_counts = col_data.value_counts()
+            
+            fig = px.bar(
+                x=value_counts.values,
+                y=value_counts.index,
+                orientation='h',
+                title=f"Distribuição de Respostas - {col}",
+                labels={'x': 'Número de Respostas', 'y': 'Opções'},
+                color=value_counts.values,
+                color_continuous_scale='viridis'
+            )
+            
+            fig.update_layout(
+                height=400,
+                title_font_size=14,
+                xaxis_title_font_size=12,
+                yaxis_title_font_size=12,
+                margin=dict(l=20, r=20, t=40, b=20),
+                showlegend=False
+            )
+            
+            # Convert to HTML without external dependencies
+            charts_html[col] = fig.to_html(include_plotlyjs='inline', div_id=f"chart_{col.replace('/', '_')}")
+            
+        elif chart_type == 'textual':
+            # Collect text responses for combobox
+            value_counts = col_data.value_counts()
+            text_data[col] = {
+                'total_unique': len(value_counts),
+                'responses': list(value_counts.items())[:50],  # Limit to top 50
+                'has_more': len(value_counts) > 50
+            }
+    
+    return charts_html, text_data
+
 def create_pdf_report():
-    """Create a simple PDF report from the analysis"""
+    """Create a comprehensive PDF report with integrated charts"""
     
     # Find the latest analysis
     outputs_dir = Path("data/surveys/outputs")
@@ -31,7 +93,11 @@ def create_pdf_report():
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
-    # Create simple HTML report (which can be printed to PDF)
+    # Load survey data and create inline charts
+    print("📊 Carregando dados da pesquisa e criando gráficos...")
+    charts_html, text_data = load_survey_data_and_create_charts(data)
+    
+    # Create comprehensive HTML report with integrated charts
     html_report = f"""
     <!DOCTYPE html>
     <html>
@@ -52,9 +118,25 @@ def create_pdf_report():
             .summary-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 20px 0; }}
             .summary-item {{ text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; }}
             .summary-number {{ font-size: 2em; font-weight: bold; color: #667eea; }}
+            /* Estilos para gráficos integrados */
+            .question-analysis {{ margin: 30px 0; padding: 20px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; }}
+            .question-title {{ color: #667eea; font-size: 1.3em; margin-bottom: 15px; font-weight: bold; }}
+            .chart-container {{ width: 70%; margin: 0 auto 20px auto; }}
+            .text-responses {{ margin-top: 15px; }}
+            .responses-dropdown {{ margin: 10px 0; }}
+            .responses-dropdown details {{ background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; padding: 10px; }}
+            .responses-dropdown summary {{ cursor: pointer; font-weight: bold; color: #667eea; padding: 5px; }}
+            .responses-grid {{ max-height: 300px; overflow-y: auto; padding: 10px; background: white; border-radius: 4px; margin-top: 10px; }}
+            .response-item {{ padding: 8px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }}
+            .response-text {{ flex: 1; }}
+            .response-count {{ font-weight: bold; color: #667eea; }}
+            .stats-summary {{ background: #f0f8ff; padding: 10px; border-radius: 5px; margin-bottom: 15px; }}
+            
             @media print {{ 
                 body {{ margin: 20px; }} 
                 .no-print {{ display: none; }}
+                .chart-container {{ width: 90%; }}
+                .responses-grid {{ max-height: 200px; }}
             }}
         </style>
     </head>
@@ -120,6 +202,73 @@ def create_pdf_report():
     html_report += """
                 </tbody>
             </table>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Visualizações Detalhadas por Pergunta</h2>
+    """
+    
+    # Add integrated charts section
+    for col, stats in data['statistics'].items():
+        chart_type = stats.get('chart_type', 'unknown')
+        
+        html_report += f"""
+            <div class="question-analysis">
+                <div class="question-title">📋 {col}</div>
+                <div class="stats-summary">
+                    <strong>Tipo:</strong> {chart_type.title()} | 
+                    <strong>Respostas:</strong> {stats['total_responses']:,} | 
+                    <strong>Valores únicos:</strong> {stats['unique_values']:,} | 
+                    <strong>Taxa de completude:</strong> {(stats['total_responses'] / data['metadata']['total_rows']) * 100:.1f}%
+                </div>
+        """
+        
+        if chart_type == 'categorical' and col in charts_html:
+            # Display chart for categorical data
+            html_report += f"""
+                <div class="chart-container">
+                    {charts_html[col]}
+                </div>
+            """
+        elif chart_type == 'textual' and col in text_data:
+            # Display text responses in expandable dropdown
+            text_info = text_data[col]
+            html_report += f"""
+                <div class="text-responses">
+                    <div class="responses-dropdown">
+                        <details>
+                            <summary>Ver todas as {text_info['total_unique']} respostas únicas</summary>
+                            <div class="responses-grid">
+            """
+            
+            for response, count in text_info['responses']:
+                html_report += f"""
+                                <div class="response-item">
+                                    <div class="response-text">{response}</div>
+                                    <div class="response-count">{count}x</div>
+                                </div>
+                """
+            
+            if text_info['has_more']:
+                html_report += """
+                                <div class="response-item" style="font-style: italic; color: #666;">
+                                    <div class="response-text">... e mais respostas</div>
+                                    <div class="response-count">—</div>
+                                </div>
+                """
+            
+            html_report += """
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            """
+        
+        html_report += """
+            </div>
+        """
+    
+    html_report += """
         </div>
         
         <div class="section">
