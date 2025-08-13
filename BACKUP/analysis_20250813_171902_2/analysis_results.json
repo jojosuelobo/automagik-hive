@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "file_path": "data/surveys/raw/bruto.xlsx",
+    "analysis_date": "2025-08-13T17:19:02.541349",
+    "total_rows": 1494,
+    "total_columns": 15,
+    "survey_columns": 10
+  },
+  "survey_columns": [
+    "pesquisa300625_screen0",
+    "pesquisa300625_screen1",
+    "pesquisa300625_screen2",
+    "pesquisa300625_screen3",
+    "pesquisa300625_screen4",
+    "pesquisa300625_screen5",
+    "pesquisa300625_screen6",
+    "pesquisa300625_screen7",
+    "pesquisa300625_screen8",
+    "pesquisa300625_screen9"
+  ],
+  "statistics": {
+    "pesquisa300625_screen0": {
+      "total_responses": 1494,
+      "unique_values": 2,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen1": {
+      "total_responses": 28,
+      "unique_values": 28,
+      "missing_values": 1466,
+      "data_type": "object",
+      "chart_type": "textual"
+    },
+    "pesquisa300625_screen2": {
+      "total_responses": 1494,
+      "unique_values": 79,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "textual"
+    },
+    "pesquisa300625_screen3": {
+      "total_responses": 1494,
+      "unique_values": 5,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen4": {
+      "total_responses": 1494,
+      "unique_values": 5,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen5": {
+      "total_responses": 1494,
+      "unique_values": 5,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen6": {
+      "total_responses": 1494,
+      "unique_values": 5,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen7": {
+      "total_responses": 1494,
+      "unique_values": 5,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    },
+    "pesquisa300625_screen8": {
+      "total_responses": 1494,
+      "unique_values": 627,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "textual"
+    },
+    "pesquisa300625_screen9": {
+      "total_responses": 1494,
+      "unique_values": 2,
+      "missing_values": 0,
+      "data_type": "object",
+      "chart_type": "categorical"
+    }
+  },
+  "charts": [
+    {
+      "column": "pesquisa300625_screen0",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen0.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen0"
+    },
+    {
+      "column": "pesquisa300625_screen1",
+      "type": "textual",
+      "file": "chart_pesquisa300625_screen1.html",
+      "description": "Respostas mais frequentes para pesquisa300625_screen1"
+    },
+    {
+      "column": "pesquisa300625_screen2",
+      "type": "textual",
+      "file": "chart_pesquisa300625_screen2.html",
+      "description": "Respostas mais frequentes para pesquisa300625_screen2"
+    },
+    {
+      "column": "pesquisa300625_screen3",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen3.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen3"
+    },
+    {
+      "column": "pesquisa300625_screen4",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen4.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen4"
+    },
+    {
+      "column": "pesquisa300625_screen5",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen5.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen5"
+    },
+    {
+      "column": "pesquisa300625_screen6",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen6.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen6"
+    },
+    {
+      "column": "pesquisa300625_screen7",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen7.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen7"
+    },
+    {
+      "column": "pesquisa300625_screen8",
+      "type": "textual",
+      "file": "chart_pesquisa300625_screen8.html",
+      "description": "Respostas mais frequentes para pesquisa300625_screen8"
+    },
+    {
+      "column": "pesquisa300625_screen9",
+      "type": "categorical",
+      "file": "chart_pesquisa300625_screen9.html",
+      "description": "Distribuição de respostas para pesquisa300625_screen9"
+    }
+  ]
+}
