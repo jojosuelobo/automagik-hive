@@ -1,0 +1,10 @@
+# Ignore generated databases
+*.db
+*.sqlite
+
+# Ignore survey output directories (generated dashboards)
+surveys/outputs/analysis_*/
+
+# Keep directory structure and sample data
+!surveys/raw/.gitkeep
+!surveys/outputs/.gitkeep
