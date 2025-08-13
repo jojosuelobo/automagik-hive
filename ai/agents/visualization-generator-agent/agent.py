@@ -21,7 +21,7 @@ from datetime import datetime
 from collections import Counter
 import io
 
-from agno import Agent
+from agno.agent import Agent
 from agno.models.anthropic import Claude
 from agno.storage.postgres import PostgresStorage
 from lib.logging import logger

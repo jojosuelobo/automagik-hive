@@ -16,7 +16,7 @@ import json
 import re
 from datetime import datetime
 
-from agno import Agent
+from agno.agent import Agent
 from agno.models.anthropic import Claude
 from agno.storage.postgres import PostgresStorage
 from lib.logging import logger
@@ -189,8 +189,15 @@ def get_excel_data_processor_agent(
     )
     
     # Add custom tools
-    agent.tools.append(process_xlsx_file)
-    agent.tools.append(validate_survey_data_structure)
+    tools_to_add = [process_xlsx_file, validate_survey_data_structure]
+    
+    for tool in tools_to_add:
+        if hasattr(agent, 'tools') and agent.tools is not None:
+            agent.tools.append(tool)
+        elif hasattr(agent, 'add_tool'):
+            agent.add_tool(tool)
+        else:
+            logger.warning(f"Unable to add tool {tool.__name__} to agent - tools attribute not available")
     
     logger.info(f"📊 Excel Data Processor Agent initialized - Version {config['agent']['version']}")
     return agent

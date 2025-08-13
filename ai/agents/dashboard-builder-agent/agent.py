@@ -20,7 +20,7 @@ import io
 from collections import defaultdict
 import statistics
 
-from agno import Agent
+from agno.agent import Agent
 from agno.models.anthropic import Claude
 from agno.storage.postgres import PostgresStorage
 from lib.logging import logger

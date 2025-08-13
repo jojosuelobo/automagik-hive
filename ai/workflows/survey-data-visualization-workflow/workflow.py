@@ -44,6 +44,34 @@ def create_survey_workflow_model() -> Claude:
     )
 
 
+def get_session_state(step_input):
+    """Helper to safely get session state"""
+    if hasattr(step_input, 'workflow_session_state'):
+        return step_input.workflow_session_state
+    elif hasattr(step_input, 'session_state'):
+        return step_input.session_state
+    elif hasattr(step_input, 'session'):
+        return step_input.session
+    else:
+        return {}
+
+def set_session_state(step_input, data):
+    """Helper to safely set session state"""
+    if hasattr(step_input, 'workflow_session_state'):
+        step_input.workflow_session_state = step_input.workflow_session_state or {}
+        step_input.workflow_session_state.update(data)
+    elif hasattr(step_input, 'session_state'):
+        step_input.session_state = step_input.session_state or {}
+        step_input.session_state.update(data)
+    elif hasattr(step_input, 'session'):
+        if step_input.session is None:
+            step_input.session = {}
+        if isinstance(step_input.session, dict):
+            step_input.session.update(data)
+        else:
+            for key, value in data.items():
+                setattr(step_input.session, key, value)
+
 def execute_excel_processing_step(step_input: StepInput) -> StepOutput:
     """
     Execute Excel data processing step - extract and validate survey data
@@ -61,13 +89,33 @@ def execute_excel_processing_step(step_input: StepInput) -> StepOutput:
         input_message = step_input.message
         file_path = None
         
-        # Try to extract file path from message
-        if "file_path" in input_message:
-            # Extract file path if provided in structured format
-            import re
+        # Try to extract file path from message - multiple patterns
+        import re
+        
+        # Pattern 1: "arquivo XLSX: path"
+        path_match = re.search(r'arquivo XLSX:\s*([^\s\n]+)', input_message)
+        if path_match:
+            file_path = path_match.group(1)
+        
+        # Pattern 2: structured format
+        if not file_path and "file_path" in input_message:
             path_match = re.search(r'file_path[:\s]*["\']([^"\']+)["\']', input_message)
             if path_match:
                 file_path = path_match.group(1)
+        
+        # Pattern 3: "data/surveys/raw/bruto.xlsx" anywhere in message
+        if not file_path:
+            path_match = re.search(r'(data/surveys/raw/[^\s\n]+\.xlsx)', input_message)
+            if path_match:
+                file_path = path_match.group(1)
+        
+        # Fallback: if no file path found, use the default
+        if not file_path:
+            logger.warning(f"No file path found in message, using default: data/surveys/raw/bruto.xlsx")
+            logger.debug(f"Input message was: {input_message[:200]}...")
+            file_path = "data/surveys/raw/bruto.xlsx"
+        
+        logger.info(f"Excel processing will use file: {file_path}")
         
         # Create Excel processor agent using dynamic import
         get_excel_data_processor_agent = import_agent_dynamically(
@@ -75,8 +123,9 @@ def execute_excel_processing_step(step_input: StepInput) -> StepOutput:
             "get_excel_data_processor_agent"
         )
         excel_processor = get_excel_data_processor_agent(
-            session_id=step_input.workflow_session_state.get("session_id"),
-            debug_mode=step_input.workflow_session_state.get("debug_mode", False)
+            session_id=get_session_state(step_input).get("session_id"),
+            debug_mode=get_session_state(step_input).get("debug_mode", False),
+            db_url="sqlite:///data/agents.db"
         )
         
         # Process the Excel file
@@ -107,17 +156,26 @@ def execute_excel_processing_step(step_input: StepInput) -> StepOutput:
             """
         
         # Run Excel processing
-        response = excel_processor.run(processing_query)
+        try:
+            response = excel_processor.run(processing_query)
+            logger.info(f"Excel agent response type: {type(response)}")
+            logger.info(f"Excel agent response content: {str(response)[:200]}...")
+        except Exception as e:
+            logger.error(f"Excel processing failed with error: {str(e)}")
+            logger.error(f"Error type: {type(e)}")
+            import traceback
+            logger.error(f"Full traceback: {traceback.format_exc()}")
+            raise
         
         if not response.content:
             raise ValueError("Excel processing agent returned empty response")
         
         # Store processing results in session state
-        step_input.workflow_session_state["excel_processing_results"] = {
+        set_session_state(step_input, {"excel_processing_results": {
             "response": str(response.content),
             "processing_timestamp": datetime.now().isoformat(),
             "agent_used": "excel-data-processor-agent"
-        }
+        }})
         
         # Create structured output
         processing_summary = {
@@ -155,7 +213,7 @@ def execute_data_classification_step(step_input: StepInput) -> StepOutput:
         logger.info("🔄 Starting data type classification step...")
         
         # Get previous step results
-        excel_results = step_input.workflow_session_state.get("excel_processing_results", {})
+        excel_results = get_session_state(step_input).get("excel_processing_results", {})
         
         if not excel_results:
             raise ValueError("No Excel processing results found in session state")
@@ -166,8 +224,9 @@ def execute_data_classification_step(step_input: StepInput) -> StepOutput:
             "get_data_type_classifier_agent"
         )
         classifier_agent = get_data_type_classifier_agent(
-            session_id=step_input.workflow_session_state.get("session_id"),
-            debug_mode=step_input.workflow_session_state.get("debug_mode", False)
+            session_id=get_session_state(step_input).get("session_id"),
+            debug_mode=get_session_state(step_input).get("debug_mode", False),
+            db_url="sqlite:///data/agents.db"
         )
         
         # Prepare classification query
@@ -193,11 +252,11 @@ def execute_data_classification_step(step_input: StepInput) -> StepOutput:
             raise ValueError("Data classifier agent returned empty response")
         
         # Store classification results in session state
-        step_input.workflow_session_state["classification_results"] = {
+        set_session_state(step_input, {"classification_results": {
             "response": str(response.content),
             "classification_timestamp": datetime.now().isoformat(),
             "agent_used": "data-type-classifier-agent"
-        }
+        }})
         
         # Create structured output
         classification_summary = {
@@ -235,8 +294,8 @@ def execute_visualization_generation_step(step_input: StepInput) -> StepOutput:
         logger.info("🔄 Starting visualization generation step...")
         
         # Get previous step results
-        excel_results = step_input.workflow_session_state.get("excel_processing_results", {})
-        classification_results = step_input.workflow_session_state.get("classification_results", {})
+        excel_results = get_session_state(step_input).get("excel_processing_results", {})
+        classification_results = get_session_state(step_input).get("classification_results", {})
         
         if not excel_results or not classification_results:
             raise ValueError("Missing Excel processing or classification results")
@@ -247,8 +306,9 @@ def execute_visualization_generation_step(step_input: StepInput) -> StepOutput:
             "get_visualization_generator_agent"
         )
         viz_agent = get_visualization_generator_agent(
-            session_id=step_input.workflow_session_state.get("session_id"),
-            debug_mode=step_input.workflow_session_state.get("debug_mode", False)
+            session_id=get_session_state(step_input).get("session_id"),
+            debug_mode=get_session_state(step_input).get("debug_mode", False),
+            db_url="sqlite:///data/agents.db"
         )
         
         # Prepare visualization query
@@ -278,11 +338,11 @@ def execute_visualization_generation_step(step_input: StepInput) -> StepOutput:
             raise ValueError("Visualization generator agent returned empty response")
         
         # Store visualization results in session state
-        step_input.workflow_session_state["visualization_results"] = {
+        set_session_state(step_input, {"visualization_results": {
             "response": str(response.content),
             "visualization_timestamp": datetime.now().isoformat(),
             "agent_used": "visualization-generator-agent"
-        }
+        }})
         
         # Create structured output
         visualization_summary = {
@@ -320,9 +380,9 @@ def execute_dashboard_assembly_step(step_input: StepInput) -> StepOutput:
         logger.info("🔄 Starting dashboard assembly step...")
         
         # Get all previous step results
-        excel_results = step_input.workflow_session_state.get("excel_processing_results", {})
-        classification_results = step_input.workflow_session_state.get("classification_results", {})
-        visualization_results = step_input.workflow_session_state.get("visualization_results", {})
+        excel_results = get_session_state(step_input).get("excel_processing_results", {})
+        classification_results = get_session_state(step_input).get("classification_results", {})
+        visualization_results = get_session_state(step_input).get("visualization_results", {})
         
         if not all([excel_results, classification_results, visualization_results]):
             raise ValueError("Missing results from previous workflow steps")
@@ -333,8 +393,9 @@ def execute_dashboard_assembly_step(step_input: StepInput) -> StepOutput:
             "get_dashboard_builder_agent"
         )
         dashboard_agent = get_dashboard_builder_agent(
-            session_id=step_input.workflow_session_state.get("session_id"),
-            debug_mode=step_input.workflow_session_state.get("debug_mode", False)
+            session_id=get_session_state(step_input).get("session_id"),
+            debug_mode=get_session_state(step_input).get("debug_mode", False),
+            db_url="sqlite:///data/agents.db"
         )
         
         # Prepare dashboard assembly query
@@ -367,11 +428,11 @@ def execute_dashboard_assembly_step(step_input: StepInput) -> StepOutput:
             raise ValueError("Dashboard builder agent returned empty response")
         
         # Store final results in session state
-        step_input.workflow_session_state["dashboard_results"] = {
+        set_session_state(step_input, {"dashboard_results": {
             "response": str(response.content),
             "dashboard_timestamp": datetime.now().isoformat(),
             "agent_used": "dashboard-builder-agent"
-        }
+        }})
         
         # Create comprehensive workflow summary
         workflow_summary = {
@@ -432,30 +493,10 @@ def get_survey_data_visualization_workflow(**kwargs) -> Workflow:
         name="survey_data_visualization",
         description="Automated survey data analysis and visualization pipeline with professional dashboard generation",
         steps=[
-            Step(
-                name="excel_processing_step",
-                description="Extract and validate survey data from XLSX files",
-                function=execute_excel_processing_step,
-                max_retries=3
-            ),
-            Step(
-                name="data_classification_step",
-                description="Classify data types and analyze survey column characteristics",
-                function=execute_data_classification_step,
-                max_retries=3
-            ),
-            Step(
-                name="visualization_generation_step",
-                description="Generate professional charts and visualizations",
-                function=execute_visualization_generation_step,
-                max_retries=3
-            ),
-            Step(
-                name="dashboard_assembly_step",
-                description="Compile dashboard, reports, and executive insights",
-                function=execute_dashboard_assembly_step,
-                max_retries=2
-            )
+            execute_excel_processing_step,
+            execute_data_classification_step,
+            execute_visualization_generation_step,
+            execute_dashboard_assembly_step
         ],
         # Use storage configuration from config file
         storage=PostgresStorage(
@@ -470,8 +511,8 @@ def get_survey_data_visualization_workflow(**kwargs) -> Workflow:
     return workflow
 
 
-# For backward compatibility and direct testing
-survey_data_visualization_workflow = get_survey_data_visualization_workflow()
+# For backward compatibility and direct testing - disable to prevent initialization error
+# survey_data_visualization_workflow = get_survey_data_visualization_workflow()
 
 
 if __name__ == "__main__":
