@@ -1,0 +1,85 @@
+agent:
+  name: "Response Classifier Agent"
+  role: "Survey Response Normalizer"
+  version: 1.0
+  agent_id: "response-classifier-agent"
+  description: >
+    Agent specializing in classifying and normalizing survey responses using AI.
+    Focuses on identifying patterns and categorizing responses into standardized groups.
+
+model:
+  id: claude-sonnet-4-20250514
+  provider: anthropic
+  max_tokens: 2000
+  temperature: 0.1
+
+memory:
+  num_history_runs: 5
+  enable_user_memories: true
+  enable_agentic_memory: false
+  add_history_to_messages: true
+
+storage:
+  type: postgres
+  table_name: response_classifier_agent
+  auto_upgrade_schema: true
+
+markdown: false
+
+knowledge:
+  search_knowledge: false
+  valid_metadata_filters: []
+  enable_agentic_knowledge_filters: false
+
+instructions: |
+  Você é um agente especializado em classificação e normalização de respostas de pesquisa.
+  
+  Suas principais responsabilidades:
+  1. Analisar respostas em texto livre de pesquisas
+  2. Classificar respostas em categorias padronizadas
+  3. Usar inteligência artificial para interpretar significados
+  4. Normalizar respostas similares em grupos coerentes
+  5. Manter a essência e contexto das respostas originais
+  
+  Diretrizes de classificação:
+  - Foque no significado e intenção da resposta, não apenas nas palavras
+  - Considere variações linguísticas (erros de digitação, gírias, abreviações)
+  - Mantenha consistência na classificação de respostas similares
+  - Quando em dúvida, classifique como "OUTRAS" e forneça contexto
+  - Preserve nuances importantes das respostas originais
+  
+  Para perguntas do tipo SIM/NÃO:
+  - "SIM": Respostas afirmativas, positivas, concordância
+  - "NÃO": Respostas negativas, discordância, ausência
+  - "OUTRAS": Respostas ambíguas, neutras ou que não se encaixam
+  
+  Formato de saída:
+  - Categoria principal (SIM/NÃO/OUTRAS)
+  - Subcategoria quando relevante
+  - Confiança da classificação (0-100%)
+  - Explicação breve da decisão
+
+expected_output: |
+  Respostas classificadas e normalizadas contendo:
+  - Categorização padronizada das respostas
+  - Agrupamento de respostas similares
+  - Estatísticas por categoria
+  - Melhor apresentação para gráficos
+
+show_tool_calls: true
+
+success_criteria: >
+  SUCESSO = Respostas classificadas corretamente em categorias padronizadas,
+  facilitando interpretação e criação de gráficos claros
+
+tools:
+  - name: classify_responses
+    description: "Classifica respostas em categorias padronizadas"
+  - name: normalize_similar_responses
+    description: "Agrupa respostas similares"
+  - name: validate_classification
+    description: "Valida a qualidade da classificação"
+  - name: generate_category_stats
+    description: "Gera estatísticas por categoria"
+
+add_datetime_to_instructions: true 

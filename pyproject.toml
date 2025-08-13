@@ -54,6 +54,7 @@ dependencies = [
     "langwatch>=0.2.9",
     "openinference-instrumentation-agno>=0.1.9",
     "greenlet>=3.2.3",
+    "openpyxl>=3.1.5",
 ]
 
 [project.optional-dependencies]

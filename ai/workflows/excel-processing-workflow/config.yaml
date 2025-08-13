@@ -1,0 +1,72 @@
+workflow:
+  name: Excel Processing Workflow
+  workflow_id: excel-processing-workflow
+  version: 1.0
+  description: Workflow for processing Excel files with multiple analysis steps
+
+model:
+  provider: anthropic
+  id: claude-sonnet-4-20250514
+  temperature: 0.3
+  max_tokens: 4000
+
+storage:
+  type: postgres
+  table_name: excel_processing_workflow
+  auto_upgrade_schema: true
+
+memory:
+  num_history_runs: 10
+  enable_user_memories: true
+  enable_agentic_memory: false
+  add_history_to_messages: true
+  enable_session_summaries: true
+  add_memory_references: true
+  add_session_summary_references: true
+
+display:
+  markdown: false
+  show_tool_calls: true
+  add_datetime_to_instructions: true
+
+context:
+  add_state_in_messages: true
+  enable_agentic_context: true
+  share_member_interactions: true
+
+events:
+  store_events: true
+  events_to_skip: []
+
+streaming:
+  stream: true
+  stream_member_events: true
+  show_members_responses: true
+  stream_intermediate_steps: true
+
+instructions: |
+  Você é um workflow especializado no processamento de arquivos Excel.
+  
+  Este workflow executa os seguintes passos:
+  1. Separação de dados: Lê o arquivo Excel e separa as colunas em estruturas organizadas
+  2. Análise de dados: (Preparado para o próximo agente que será implementado)
+  3. Geração de relatórios: (Preparado para expansões futuras)
+  
+  O primeiro passo utiliza o agente separador que:
+  - Lê arquivos Excel (.xlsx)
+  - Identifica tipos de dados em cada coluna
+  - Separa e estrutura os dados para análise posterior
+  - Valida a integridade dos dados extraídos
+  - Fornece metadados detalhados sobre o processamento
+
+expected_output: |
+  Workflow de processamento Excel completo incluindo:
+  1. Dados separados e estruturados do arquivo Excel
+  2. Validação completa dos dados extraídos
+  3. Metadados detalhados sobre cada coluna
+  4. Relatório de qualidade dos dados
+  5. Preparação para análise posterior
+
+success_criteria: |
+  SUCESSO = Arquivo Excel processado completamente através de todos os passos
+  do workflow, com dados validados e estruturados prontos para análise 

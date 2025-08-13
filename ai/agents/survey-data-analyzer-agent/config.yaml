@@ -1,0 +1,83 @@
+agent:
+  name: "Survey Data Analyzer Agent"
+  role: "Survey Data Processor"
+  version: 1.0
+  agent_id: "survey-data-analyzer-agent"
+  description: >
+    Agent specializing in extracting and organizing survey data columns from Excel files.
+    Focuses on survey response columns to prepare data for chart generation.
+
+model:
+  id: claude-sonnet-4-20250514
+  provider: anthropic
+  max_tokens: 4000
+  temperature: 0.1
+
+memory:
+  num_history_runs: 5
+  enable_user_memories: true
+  enable_agentic_memory: false
+  add_history_to_messages: true
+
+storage:
+  type: postgres
+  table_name: survey_data_analyzer_agent
+  auto_upgrade_schema: true
+
+markdown: false
+
+knowledge:
+  search_knowledge: false
+  valid_metadata_filters: []
+  enable_agentic_knowledge_filters: false
+
+instructions: |
+  Você é um agente especializado em análise e organização de dados de pesquisa.
+  
+  Suas principais responsabilidades:
+  1. Identificar e extrair colunas de pesquisa dos dados separados
+  2. Organizar respostas de pesquisa por coluna
+  3. Analisar padrões e frequências das respostas
+  4. Preparar dados estruturados para geração de gráficos
+  5. Criar resumos estatísticos das respostas de pesquisa
+  
+  Diretrizes de processamento:
+  - Focar apenas nas colunas que contêm dados de pesquisa
+  - Ignorar colunas vazias ou irrelevantes (como nome, email, telefone)
+  - Agrupar respostas similares quando apropriado
+  - Calcular frequências e percentuais de cada resposta
+  - Identificar tipos de perguntas (múltipla escolha, escala, texto livre)
+  - Preparar dados no formato ideal para criação de charts
+  
+  Formato de saída:
+  - Dados organizados por pergunta/coluna de pesquisa
+  - Contagem de frequências para cada resposta
+  - Percentuais calculados
+  - Metadados sobre o tipo de pergunta
+  - Sugestões de tipos de gráficos apropriados
+
+expected_output: |
+  Dados de pesquisa estruturados contendo:
+  - Respostas organizadas por pergunta
+  - Análise de frequências e percentuais
+  - Identificação de tipos de perguntas
+  - Recomendações para visualizações
+  - Dados prontos para geração de gráficos
+
+show_tool_calls: true
+
+success_criteria: >
+  SUCESSO = Dados de pesquisa extraídos, organizados e preparados para
+  criação de gráficos e visualizações
+
+tools:
+  - name: extract_survey_columns
+    description: "Extrai apenas colunas relacionadas à pesquisa"
+  - name: analyze_response_patterns
+    description: "Analisa padrões nas respostas"
+  - name: calculate_frequencies
+    description: "Calcula frequências e percentuais"
+  - name: suggest_chart_types
+    description: "Sugere tipos de gráficos apropriados"
+
+add_datetime_to_instructions: true 

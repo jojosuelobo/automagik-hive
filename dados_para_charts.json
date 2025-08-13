@@ -1,0 +1,3168 @@
+{
+  "charts_to_generate": [
+    {
+      "question_id": "pesquisa300625_screen0",
+      "question_name": "pesquisa300625_screen0",
+      "question_type": "yes_no",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "1_Não": {
+          "count": 1077,
+          "percentage": 72.09
+        },
+        "0_Sim": {
+          "count": 417,
+          "percentage": 27.91
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen0",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen1",
+      "question_name": "pesquisa300625_screen1",
+      "question_type": "multiple_choice_many",
+      "total_responses": 28,
+      "chart_type_recommended": "horizontal_bar",
+      "data_for_chart": {
+        "Perguntq 2": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Não conhecia": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Não sei que campanha é! Estou respondendo a pesquisa,pois enviaram o link!": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Qdo estava fazendo um pedido no app do Zé": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Eu não seio": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Após fazer o pedido apareceu para marcar os placares": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "No app do Zé": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Cazé TV ❤️ foi o melhor divulgador com certeza": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Trabalhei um tempo com o Zé delivery": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Fui fazer um pedido no Zé e vi a campanha": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Comprando no Zé": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Ao finalizar um pedido.": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Quando fui fazer um pedido.": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Amigos": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Dentro do app. Na hora da compra": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Tô sabendo agora": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "N sei": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Nem sei que campanha é essa kkkk": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Pela minha irmã": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "TV": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Quando fui fazer o pedido tive acesso a propaganda": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Na hora da compra": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Sou entregador do Zé delivery": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Não sei": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Não sabia, só dinheiro sabendo após de finalizar o pedido.": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Tava bebendo na casa de uma amiga e ela comentou que já tinha o app ela fez o pedido e chegou muito ligeiro já pedi o link kk bom dia": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Não tô sabendo": {
+          "count": 1,
+          "percentage": 3.57
+        },
+        "Fiz um pedido e apareceu para eu fazer o palpite": {
+          "count": 1,
+          "percentage": 3.57
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen1",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen2",
+      "question_name": "pesquisa300625_screen2",
+      "question_type": "multiple_choice_many",
+      "total_responses": 1494,
+      "chart_type_recommended": "horizontal_bar",
+      "data_for_chart": {
+        "[\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 670,
+          "percentage": 44.85
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 358,
+          "percentage": 23.96
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 66,
+          "percentage": 4.42
+        },
+        "[\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 31,
+          "percentage": 2.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 15,
+          "percentage": 1.0
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"5_Indicação_de_amigos\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"4_TV_(ex.:_Globo)\"]": {
+          "count": 41,
+          "percentage": 2.74
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "[\"8_Outros_(especifique)\"]": {
+          "count": 29,
+          "percentage": 1.94
+        },
+        "[\"2_Redes_sociais\"]": {
+          "count": 71,
+          "percentage": 4.75
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 7,
+          "percentage": 0.47
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 14,
+          "percentage": 0.94
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"7_Canal_de_WhatsApp_do_Zé\",\"5_Indicação_de_amigos\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Cazé_TV)\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 32,
+          "percentage": 2.14
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"0_Notificação_do_app_do_Zé\",\"5_Indicação_de_amigos\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 7,
+          "percentage": 0.47
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\",\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"5_Indicação_de_amigos\"]": {
+          "count": 52,
+          "percentage": 3.48
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"3_Indicação_de_influenciador\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"2_Redes_sociais\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"3_Indicação_de_influenciador\"]": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\",\"3_Indicação_de_influenciador\",\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"3_Indicação_de_influenciador\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"5_Indicação_de_amigos\",\"2_Redes_sociais\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\",\"6_Streaming_(ex.:_Cazé_TV)\",\"8_Outros_(especifique)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\",\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Cazé_TV)\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"5_Indicação_de_amigos\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"5_Indicação_de_amigos\",\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Cazé_TV)\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"8_Outros_(especifique)\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"6_Streaming_(ex.:_Cazé_TV)\",\"4_TV_(ex.:_Globo)\",\"5_Indicação_de_amigos\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"7_Canal_de_WhatsApp_do_Zé\",\"2_Redes_sociais\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"0_Notificação_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"0_Notificação_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\",\"2_Redes_sociais\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"6_Streaming_(ex.:_Cazé_TV)\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"5_Indicação_de_amigos\",\"3_Indicação_de_influenciador\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"7_Canal_de_WhatsApp_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"5_Indicação_de_amigos\",\"3_Indicação_de_influenciador\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"3_Indicação_de_influenciador\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"4_TV_(ex.:_Globo)\",\"8_Outros_(especifique)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"4_TV_(ex.:_Globo)\",\"2_Redes_sociais\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"2_Redes_sociais\",\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"6_Streaming_(ex.:_Cazé_TV)\",\"7_Canal_de_WhatsApp_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\"]": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "[\"0_Notificação_do_app_do_Zé\",\"1_Banner_dentro_do_app_do_Zé\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"7_Canal_de_WhatsApp_do_Zé\",\"8_Outros_(especifique)\"]": {
+          "count": 1,
+          "percentage": 0.07
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen2",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen3",
+      "question_name": "pesquisa300625_screen3",
+      "question_type": "multiple_choice_few",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "4_5": {
+          "count": 1034,
+          "percentage": 69.21
+        },
+        "3_4": {
+          "count": 227,
+          "percentage": 15.19
+        },
+        "2_3": {
+          "count": 142,
+          "percentage": 9.5
+        },
+        "1_2": {
+          "count": 50,
+          "percentage": 3.35
+        },
+        "0_1": {
+          "count": 41,
+          "percentage": 2.74
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen3",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen4",
+      "question_name": "pesquisa300625_screen4",
+      "question_type": "multiple_choice_few",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "4_5": {
+          "count": 911,
+          "percentage": 60.98
+        },
+        "3_4": {
+          "count": 260,
+          "percentage": 17.4
+        },
+        "2_3": {
+          "count": 183,
+          "percentage": 12.25
+        },
+        "0_1": {
+          "count": 59,
+          "percentage": 3.95
+        },
+        "1_2": {
+          "count": 81,
+          "percentage": 5.42
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen4",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen5",
+      "question_name": "pesquisa300625_screen5",
+      "question_type": "multiple_choice_few",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "4_5": {
+          "count": 1040,
+          "percentage": 69.61
+        },
+        "3_4": {
+          "count": 231,
+          "percentage": 15.46
+        },
+        "2_3": {
+          "count": 140,
+          "percentage": 9.37
+        },
+        "1_2": {
+          "count": 43,
+          "percentage": 2.88
+        },
+        "0_1": {
+          "count": 40,
+          "percentage": 2.68
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen5",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen6",
+      "question_name": "pesquisa300625_screen6",
+      "question_type": "multiple_choice_few",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "4_5": {
+          "count": 1016,
+          "percentage": 68.01
+        },
+        "2_3": {
+          "count": 132,
+          "percentage": 8.84
+        },
+        "3_4": {
+          "count": 257,
+          "percentage": 17.2
+        },
+        "0_1": {
+          "count": 45,
+          "percentage": 3.01
+        },
+        "1_2": {
+          "count": 44,
+          "percentage": 2.95
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen6",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen7",
+      "question_name": "pesquisa300625_screen7",
+      "question_type": "multiple_choice_few",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "4_5": {
+          "count": 1059,
+          "percentage": 70.88
+        },
+        "3_4": {
+          "count": 228,
+          "percentage": 15.26
+        },
+        "2_3": {
+          "count": 121,
+          "percentage": 8.1
+        },
+        "1_2": {
+          "count": 46,
+          "percentage": 3.08
+        },
+        "0_1": {
+          "count": 40,
+          "percentage": 2.68
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen7",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen8",
+      "question_name": "pesquisa300625_screen8",
+      "question_type": "yes_no",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "Super fácil": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Nenhuma": {
+          "count": 38,
+          "percentage": 2.54
+        },
+        "Rápido e facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Depois da aposta feita, acompanhar o resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao": {
+          "count": 125,
+          "percentage": 8.37
+        },
+        "Foi bem clara a promoção": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        ".": {
+          "count": 58,
+          "percentage": 3.88
+        },
+        "N": {
+          "count": 15,
+          "percentage": 1.0
+        },
+        "Não participei": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Foi tranquilo.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Não tive dificuldades": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Não tive problemas em participar. Só os seus distribuidores q sempre entregam a cerveja quente com preço de gelada 😑": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não  tive.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "...": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Foi fácil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Sem dificuldade.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Dificuldade de entender que precisaria colocar o zero como resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problema.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bom": {
+          "count": 8,
+          "percentage": 0.54
+        },
+        "Sim infelizmente Zé delivery está deixando a desejar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só não achei tão interessante": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bem tranquilo": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Não tive nenhuma dificuldade": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Normal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não": {
+          "count": 190,
+          "percentage": 12.72
+        },
+        "Tudo muito simples": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Nenhuma dificuldade": {
+          "count": 15,
+          "percentage": 1.0
+        },
+        "Não vi": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Top": {
+          "count": 10,
+          "percentage": 0.67
+        },
+        "Não tive problemas": {
+          "count": 9,
+          "percentage": 0.6
+        },
+        "Não tive": {
+          "count": 47,
+          "percentage": 3.15
+        },
+        "Sem problemas": {
+          "count": 14,
+          "percentage": 0.94
+        },
+        "Tudo certo": {
+          "count": 13,
+          "percentage": 0.87
+        },
+        "nao": {
+          "count": 8,
+          "percentage": 0.54
+        },
+        "Nunca ganho mesmo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade": {
+          "count": 24,
+          "percentage": 1.61
+        },
+        "1": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo": {
+          "count": 21,
+          "percentage": 1.41
+        },
+        "Só achei ruim ter que juntar pontos no Zé recompensa para participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Simples de": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Obrigada!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Difícil de entender": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive problema": {
+          "count": 9,
+          "percentage": 0.6
+        },
+        "Vinho sempre vem quente!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Pergunra 4": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nem tô sabendo nada disso mal divulgado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ok": {
+          "count": 10,
+          "percentage": 0.67
+        },
+        "Não de fácil intendimento": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Primeiro, fiz 2 pedidos e o aplicativo não abriu os palpites.\nSegundo, a facilidade de acompanhar seu desempenho foi péssima no site da Budweiser, bem diferente da Copa do Mundo de 2022.\nTerceiro e último, começou em cima do início do campeonato, eram jogos todos dias e ter direito a apenas 4 apostas foi injusto.\nSugestão:No próximo, vocês poderiam associar a quantidade de palpites ao a quantidade de Budweiser comprada; 6 Buds 4 palpites, 12 Buds 6 palpites...": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "A": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Não tibe problema, o sistema era bem auto explicativo.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "A campanha foi muito simples de ser entendida..": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive dificuldade": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Foi bem fácil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Auto explicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Recomendo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sim": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Muito bom gostei muito": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sei fazer": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não, foi tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo super esclarecedor": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Demorado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito fácil e rápido obrigada ze": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Os produtos teria que ser mas em conta, sem ter que pagar frete": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ñ.. foi tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero ganhar 01 ano de Budweiser.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quando finalizei a compra já apareceu para digitar os palpites": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem dificuldade": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Foi tudo bem": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Tudo tranquilo": {
+          "count": 10,
+          "percentage": 0.67
+        },
+        "Foi tranquilo": {
+          "count": 17,
+          "percentage": 1.14
+        },
+        "Não tive nenhum problema": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "O": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Muito pratico e rápido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nem um problema para participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhum problema": {
+          "count": 19,
+          "percentage": 1.27
+        },
+        "Só a espera de ganhar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero brindes": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "So podiam mostrar um rank dos participantes": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Campanha muito boa, preço muito bom!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem dificuldade alguma.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tenho": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Nemhuma": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada a reclamar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Super facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhuma dificuldade em participar do bolão": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tudo muito tranquilo... apesar de muito difícil mas foi bem organizado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não é bem prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo bem claro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem dificuldades.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito clara": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade nenhuma!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tenho": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Nai": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dúvidas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom": {
+          "count": 10,
+          "percentage": 0.67
+        },
+        "Excelente": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Tudo muito facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi simples": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Bem tranquilo": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Tudo certo.": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Otimo": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Não tive problemas em participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "I": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Super fácil a compra e muita agilidade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo correu bem.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Na última compra não consegui enviar meu placar, e teve uma compra q fiz com uma budewaiser q não veio no meu pedido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive ,tudo foi tranquilo.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Deu tudo certo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tou sou sempre bem atendida": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada": {
+          "count": 18,
+          "percentage": 1.2
+        },
+        "Rapido e pratico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ok": {
+          "count": 20,
+          "percentage": 1.34
+        },
+        "Não.": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Tem que dá mas cupons sou cliente a um tempo , bebidas tbm vir no preço bom seria muito bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bom": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Não tive assesso a promoção": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Fácil": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "As regras não são claras": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Facil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Sem dúvidas e dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gosto do ze": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive resplando sobre algumas dúvidas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi fácil participar": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Não, nenhum.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só não consigo ver os ganhadores, de resto TD bem": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ocorre normal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito explicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Si me inscrevi": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhum problema ou dificuldade.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Mu": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "App super fácil de usar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive": {
+          "count": 12,
+          "percentage": 0.8
+        },
+        "..": {
+          "count": 6,
+          "percentage": 0.4
+        },
+        "Ótimo": {
+          "count": 6,
+          "percentage": 0.4
+        },
+        "Nao conseguir entender como participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Como diversão foi muito gratificante": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilos": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tuve": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhum problema.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Gostaria de ganhar uma lata do Fluzão da Budweiser": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi uma boa experiência.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito fácil": {
+          "count": 8,
+          "percentage": 0.54
+        },
+        "Não tive problema.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo maravilhoso": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não consegui identificar as regras não tem toda informação": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive.": {
+          "count": 6,
+          "percentage": 0.4
+        },
+        "Estava claro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Problema algum,só que alguns palpites acertei e nada ganhei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero participar da final!!!\nPalmeiras campeão mundial 2025": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito boa iniciatica , estao de parabens !": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "-": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Gostaria muito de ganhar o prêmio": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "M": {
+          "count": 6,
+          "percentage": 0.4
+        },
+        "Nem uma dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tenho dificuldade": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Tudo perfeito": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Muito simples a participacao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom participar": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Nao teve": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Consegui acompanhar o passo a passo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito facil": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Gosto de dar palpite": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Brincadeira muito legal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudk perfeito": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada a declarar": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Super tranquilo": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Boa": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Sem nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Prática e rápido Zé dellyvery": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhum problema, tudo bem especificado.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhum": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Muito boa a promoção": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "😘": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        ",": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo rápido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "A experiência e muito boa": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problemas.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem comentários!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Vocês tem que fazer mais promoções": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Necessidade de comprar apenas pelo app": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao sei ate agora se ganhei algo ou nao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "X": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não consegui ver o resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Aparece assim que finalizou o pedido.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem dificuldades": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Continuo sem saber que campanha é!! 🤣🤣": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Eu acertei um e ate agora nao sei onque ganhei, pelo visto perdi": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tudo muito facil e intuitivo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito. Boa": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "TD ok": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi rápido e as informações foram claras.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi rápido e fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só tive acesso na primeira compra": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Top, gostaria de participar muito mais vezes.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi mto fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito tranquilo, bem divertido. E ainda desenvolveu meu ego por conhecimentos futebolísticos na casa kkkkk": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nenhuma": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Quero saber como participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só seguir as informações": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sim entrega": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problema": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Foi bem fácil.\nColoquei os palpites e pronto.\nRezando para acertar e ter a geladinhas o ano todo !!!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não foi difícil entretanto não entendo nada de futebol": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo normal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "R": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não!": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Top experiência": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Clareza total": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Pra poder achar o painel do bolao que respondi": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Na": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "To": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Depois de enviar o bolão, não encontrei ele novamente para conferir os jogos. \nE os cupons de frete gratis que ganhei todos venciam no mesmo dia entao acabei \"perdendo\" quase todos pois nao seria possivel usar todos em 1 dia só.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Participar foi muito fácil,": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhuma dificuldade, só achei que o tempo de utilização do cupom é muito curto": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Dificulda nenhuma só não tive tanta clareza": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi uma experiência muito legal e não tive grandes dificuldades para participar do bolão.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito didático, fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Apenas efetuei a compra e marquei os placares e pronto": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problema algum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive, só não compreendi como é o resultado se foi premiada.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "V": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Top so faltou eu ganhar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não estava claro as regras para participação": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sou muito de apostas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bem tranquilo.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "No app está bem claro as dúvidas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Facil a explicação.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "_": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problema": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Não tive problemas.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nd": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Foi muito bom e divertido participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sei o resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Valeu Zé": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhuma.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "N teve": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "NÃO,SUPER TRANQUILO 🤝": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Depois não achei meus palpites,erros ou acertos.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bom de mais 😁": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom compro sempre bebidas bem geladas.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Eu so comprei e acho que já participei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tiver": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Vlw": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre nom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ms gostaria de ter sido a ganhadora": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nemhum problema , na propria divulgacao ja foi bem explicado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhuma dificuldade.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre muito fácil e top": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não,participei ainda": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito claro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gosto muito do App.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive peoblema nenhum , só não estou satisfeita porque não ganhei rsrs": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Naontive": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "K": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi de boa": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Objetivo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "E muito bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito confuso": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não entendo de futebol": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilho": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gostei de participar": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Super facil de participar e super recomendo os bolão e os super cupoms": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Pois e": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Falta de clareza": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Valeu": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Muito facil e interativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom o app": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tive dificuldade em acessar as regras": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo bom e tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem tranquilo e auto explicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Zé delivery e bom demais 👏🍺🍺🍺🍺": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ok!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nenhuma dificuldade": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Achei facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao conseguia acessar meu palpite para ver se acertei ou nao.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Htfh": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não porém ficou muito vago comdaria o premiação para acertar o bolão não sei se ganhei alguma coisa ounperdi....": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Fácil,  rápido..": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nqo": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Nunca tive problemas é nem dificuldade pra entrar no Zé deliver": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao doi muito claro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problema ☺️": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo  certo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Apesar de não participar ativamente, foi simples de entender e como funciona.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito rapido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Falta do produto em garrafa retornável 300ml": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade em participar da campanha": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ok obrigada": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ok.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Foi bem facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Um pouco": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom gostei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhuma dificuldade.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Gostei de fazer o bolão": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nenhum problema para participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nem um problema": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Não tivemos nenhum problema não": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "👍": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo certo!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bem simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Eu gostei muito do Zé delivery": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não foi super claro e fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não tive dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não estive problema algum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi facil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Tinha q ser mais explicado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não,foi simples, rápido e prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "!!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhum pbl": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "nenhuma dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "🙂": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não estou conseguindo logar no app. Da errro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Dudu": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sei qual campanha é": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Basicamente eu gostei da experiência de participar ativamente das atividades do aplicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Td ok": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito bom": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Gt": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Dificuldade nenhuma.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tranquilo, bem simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Bem claro e explicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca Tive Nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao ficou muito claro onde apareceria o resultado e depois tive dificuldade em localizar no app onde estava esse bolão para lembrar o que eu tinha jogado e se ja tinha acabado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tenho nem um poblema ta tido esplicado certinho": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problemas": {
+          "count": 5,
+          "percentage": 0.33
+        },
+        "Só falta tempo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero cupom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Achei uma excelente iniciativa do Zé delivery.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não é fácil de mexe no app": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "So nao acertei nada mas, participei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Apto a participar.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Para resgatar o cupom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ficou bem claro a campanha, mas poderia ser melhor trabalhada": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Acessar o local de retirada.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Q": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Naotemho": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito claro.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Show": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Nao tem segredo tudo facinho": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ola gostaria de deixar uma observação, eu comprei cerveja Bud esses dias garrafinhas e veio com a alteração de gosto e já é a segunda vez que pego e vem com essa alteração, gostaria que vcs investigasse sobre isso , obg !!!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não teve dificuldade": {
+          "count": 3,
+          "percentage": 0.2
+        },
+        "Apareceu rápido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Excelente!!!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muita facilidade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive muito rápido e fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "kk": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ótimo atendimento": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "tudo tranquilo sem problemas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "o zé é show": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ñ foi tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tem nenhum problema em participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Eu vi a promoção no momento que fechei um pedido. Faltou uma maneira de acompanhar nossas respostas, e só na primeira compra que recebi um bolão pra preencher.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada a esclarecer": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não,eu não tive dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Super tranquilo participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "foi muito facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero muito ganha esse premio": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao ficou claro se consegui participar ou nao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "No início não tinha entendido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Facilidade e praticidade \nMuito bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não estiver dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem nenhum problema, super facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Exige que coloque o numero 0, isso nao deixa concluir a aposta, uma vez que o campo originario já é 0….": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo foi muito tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive, pois era bem facil acessar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problema Algum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive problemas não": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tranquilo pra participar e gostei muito": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gostei de participar.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem explixativo, bem tranquilo. Obrigada": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bom!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nem sei do que se trata": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Oj": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não encontrei o caminho paranretornar a promoção para conferir os resultados.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Difícil eu usar o app, poucas vantagens": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bem objetivo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Boa experiência, só não ganhei kkk": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Com muita facilidade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito bem esclarecido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nem uma": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Legal a iniciativa": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não entendi como realmente funcionava": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao consegui ter acesso ao bolao quando precisei.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo e de fácil acesso.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem comentários": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Maravilhosa a promoção espera q tenha muitas outras": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Mt bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Na hora de escanear,tampinha algumas não tá ,mesmo ela não estando amassada não dá para escanear": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não houve": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Demora demais": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Super facil e pratico .": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Super rápido": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Cxxxxxx": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi super facil de participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Facil participação!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "So nao entendi quem ganhava e o que ganhava e nem como": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tenho problema não": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ano consgeui acesso": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem fácil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Demora jo cadastro nanproko": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Rápido": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Foi tranquilo para responder": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhum problema graças a Deus foi tudo muito resolvido obrigado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "O app travou uma vez": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sei do que vcs estão se referindo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito facil e simples obg": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não Tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi rapido e pratico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não conseguir acessar as minhas apostas depois de finalizada.\nNão achei no app.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Para visualizar os resultados": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Simples": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "Muito simples": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Não consigo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhum problema ou dificuldade.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não participei do bolão.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não tenho dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não ,super tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem alteracao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao sei se ganhei ou o que ganhava": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi de boas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo bem pratico e rapido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Fácil e gratificante. Ganhei vários cupons": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito fácil participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tudo bem claro para mim.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tchau": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não goi tudo bem tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Prático e rápido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Problema nenhum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade nenhuma": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca consigo participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Está tudo bem explicado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gostaria de saber se a pessoa ganhar , qual e prêmio ?": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bom incentivo aos clientes": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito rápido e fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ocorreu tudo bem": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi super fácil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "boa ideia do bolão": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "As informações não foram claras": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só as abas da competição que era ruins": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito fácil": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "De boa": {
+          "count": 4,
+          "percentage": 0.27
+        },
+        "E simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive, foi muito fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tranquilo e acessível a todos": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Eu só tenho a agradecer por tudo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tranquilo me cadastrar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Unico problema é que errei o placar de todos os jogos 🥲😂": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive !!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tivi nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "J": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não entendi direito.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não nenhuma": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive,foi de fácil entendimento": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Achei confuso....": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo ik": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problemas para participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "E tudo esclarecido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi fácil e pratico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito difícil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sabia nem que existia": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Apenas faltou informação apos a inscrição": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ainda não soube da campanha": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Aaaaa": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo claro e objetivo.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem bolado o esquema de bola pelo ze": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não gosto de sorteios": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Rápido e fácil.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao aparece sempre no menu principal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo certo sem dificuldades.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Campanha bem clara": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito complicado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo bem simples.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "O premio nao estava muito claro, mas o direcionamento foi facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca tive problemas , mereço um desconto em Zé": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Recebi a mensagem e cliquei no link muito fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Agradeço por disponibilizar a promoção": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "É bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Adoro brindes das cervejas!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi super simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Na participação não, mas achei confuso saber qual jogo eu acertei depois e achei o frete grátis no mesmo dia, para cada acerto, muito ruim. Poderia ser acumulo de pontos no zé a cada acerto": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade para participar, mas tive dificuldade de acompanhar o resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "não....tudo tranquilo,": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Mas na realidade descobri agora mas foi legal ter participado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não deu tudo tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "NO": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi normal": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem comentarios": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Deveria ter mais": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Obrigada": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Super": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tudo óbvio e objetivo,mto bom e empolgante tbm..": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre bem rápido e prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive problema!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bom,": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tive n": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo rápido e prático.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive nenhum problema, foi super rápido e fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problemas, apenas nao entendi as regras e oque valia": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Praticamente fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não houve dificuldade": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldades para participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhum problema.": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Tudo muito prático e confiável": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tranquilo e rapido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem nem um problema em participar,  Zé é ótimo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problema algum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre foi excelente o atendimento": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nada em específico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não, foi fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tá suave": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao foi tudo perfeito": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive dificuldade nao, ate que foi fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Links não aparecem ou não funcionam corretamente": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        ".....": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito tranquilo de participar!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tranquilo...": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tive problema nenhum": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foii fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tenho dificuldade não": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não conheço direito": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo bem simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Mas, na segunda vez q fui comprar, pelo Cel. De meu filho, o entregador queria cobrar 33 reais a mais. Fiquei mto preocupada com golpe e esperamos q vc apurem o acontecido.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nenhuma diferença é dificuldade.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Regras e prêmios não ficaram claros": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tive não": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Facil e didatico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não nenhum problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só apareceu uma vez para palpitar e não apareceu mais": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não teve resultados se ganhei ou não nunca saberemos": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito facil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre dá certo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Jl": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não foi bem tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não  tenho problema  achei ótimo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Vamos começar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não foi bem de boa": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Fácil e prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive dificuldade pra participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ótima campanha. Espero ter mais": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre muito fácil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nao tenho nada a apontar.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Oi": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "Tudo bem claro": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Saber dos resultados sem precisar fazer um novo pedido.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive nenhuma": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca tive problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo dentro dos conformes": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não consegui participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Poderim liberar mais cupons para esse mundial": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Fácil demais": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "O APP é muito fácil de mexer": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problemas para participar.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito bom a experiência": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "foi super tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só não consegui ver o resultado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Nunca  tive problemas": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive problema com nada": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "nao muito gacil": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi boa!": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo foi bem explicado e muito bem feito.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "mao": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem problema bem explicado e nada específico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muita facilidade em participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Gostei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bom participar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "tudo bem explicado": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Participei para ganhar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Depois que acertei um resultado do bolao nao consegui encontrar onde estava minha classificacao, meus pontos, enfim. Nao achei nada e deixei pra lá.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "nenhum problema, muito intuitivo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não consegui ber": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Rr": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi muito fácil o aplicativo é muito bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "azar no palpite,mas sorte na escolha da bebida !": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não estou conseguindo entrar na minha conta e gostaria de acessar minha conta no delivery de volta": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "So cliquei e pronto": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "T": {
+          "count": 2,
+          "percentage": 0.13
+        },
+        "N tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo muito bem explicado 👍": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não tive, bem tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tá bom": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi super pratico": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "nao tive": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "B": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Parides e eficiência": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Ñ teve problema": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não houve problemas, só não vi os resultados quem ganhou. Recebi apenas. Msg que ganhei o bolão e o prêmio foi frete grátis. Achei fraco o prêmio se realmente esse foi o prêmio principal ou se foi de consolação.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Amo este aplicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Demora de achar uma distribuidora e demora de entrega": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não sei": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sem assunto": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Sempre foi bem rapido": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "A pesquisa é objetiva": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Promoção excelente , e regras claras": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Rapidez": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Me explica como funciona mesmo o bolão. Fiquei sabendo através do meu filho.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi divertido, uma distração": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Pra mim é muito bom.esta de parabéns.": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Muito prático": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Quero saber se eu ganhei alguma coisa?": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Skakks": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Tudo certo, só falta eu ganhar": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Só não consegui ver os resultados": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi bem trabquilo, pois o link de participação era bem específico e auto explicativo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "NN só tive dificuldades": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "tranquilo": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Bem simples": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Não nunca": {
+          "count": 1,
+          "percentage": 0.07
+        },
+        "Foi tudo muito tranquilo pra mim": {
+          "count": 1,
+          "percentage": 0.07
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen8",
+      "ready_for_generation": true
+    },
+    {
+      "question_id": "pesquisa300625_screen9",
+      "question_name": "pesquisa300625_screen9",
+      "question_type": "yes_no",
+      "total_responses": 1494,
+      "chart_type_recommended": "pie_chart",
+      "data_for_chart": {
+        "1_Não": {
+          "count": 1387,
+          "percentage": 92.84
+        },
+        "0_Sim_(especifique)": {
+          "count": 107,
+          "percentage": 7.16
+        }
+      },
+      "chart_title": "Respostas: pesquisa300625_screen9",
+      "ready_for_generation": true
+    }
+  ],
+  "prepared_at": "2025-08-13T15:46:50.036299",
+  "total_charts": 10
+}

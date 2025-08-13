@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Pesquisa - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .question-header {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .question-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .question-meta {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .insights-list {
+            list-style: none;
+        }
+        
+        .insights-list li {
+            background: #e8f6f3;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #1abc9c;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .executive-summary h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>📊 Relatório de Pesquisa</h1>
+            <p class="subtitle">Dashboard Interativo de Análise de Dados</p>
+            <p><strong>Gerado em:</strong> 13/08/2025 às 15:47</p>
+            
+        </div>
+
+        <div class="executive-summary">
+            <h3>📋 Resumo Executivo</h3>
+            <p>Esta pesquisa coletou dados de <strong>0 respondentes</strong> através de <strong>0 perguntas</strong>, 
+            alcançando uma taxa média de resposta de <strong>0.0%</strong>.</p>
+            
+            <h4>Principais Insights:</h4>
+            <div class='highlight'>❌ Baixa taxa de participação (0.0%)</div>
+        </div>
+
+        <div class="section">
+            <h2>📈 Visão Geral dos Dados</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Total de Respondentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Perguntas Analisadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0.0%</div>
+                    <div class="stat-label">Taxa Média de Resposta</div>
+                </div>
+            </div>
+            
+            <h3>Tipos de Perguntas</h3>
+            <div class="stats-grid">
+                
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Análise Detalhada por Pergunta</h2>
+    
+            <div class="question-header">
+                <div class="question-title">Pergunta 0</div>
+                <div class="question-meta">
+                    Tipo: Sim/Não | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_0"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_0 = document.getElementById('chart_0').getContext('2d');
+                    new Chart(ctx_0, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["1_N\u00e3o", "0_Sim"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1077, 417],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [72.09, 27.91][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 1</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 28 | 
+                    Taxa: 1.9%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_1"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_1 = document.getElementById('chart_1').getContext('2d');
+                    new Chart(ctx_1, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Amigos", "Ao finalizar um pedido.", "Ap\u00f3s fazer o pedido apareceu para marcar os placares", "Caz\u00e9 TV \u2764\ufe0f foi o melhor divulgador com certeza", "Comprando no Z\u00e9", "Dentro do app. Na hora da compra", "Eu n\u00e3o seio", "Fiz um pedido e apareceu para eu fazer o palpite", "Fui fazer um pedido no Z\u00e9 e vi a campanha", "N sei", "Na hora da compra", "Nem sei que campanha \u00e9 essa kkkk", "No app do Z\u00e9", "N\u00e3o conhecia", "N\u00e3o sabia, s\u00f3 dinheiro sabendo ap\u00f3s de finalizar o pedido.", "N\u00e3o sei", "N\u00e3o sei que campanha \u00e9! Estou respondendo a pesquisa,pois enviaram o link!", "N\u00e3o t\u00f4 sabendo", "Pela minha irm\u00e3", "Perguntq 2", "Qdo estava fazendo um pedido no app do Z\u00e9", "Quando fui fazer o pedido tive acesso a propaganda", "Quando fui fazer um pedido.", "Sou entregador do Z\u00e9 delivery", "TV", "Tava bebendo na casa de uma amiga e ela comentou que j\u00e1 tinha o app ela fez o pedido e chegou muito ligeiro j\u00e1 pedi o link kk bom dia", "Trabalhei um tempo com o Z\u00e9 delivery", "T\u00f4 sabendo agora"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57, 3.57][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+        y: {
+            beginAtZero: true,
+            grid: {
+                color: 'rgba(0,0,0,0.1)'
+            }
+        },
+        x: {
+            grid: {
+                color: 'rgba(0,0,0,0.1)'
+            }
+        }
+    }
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 2</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_2"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_2 = document.getElementById('chart_2').getContext('2d');
+                    new Chart(ctx_2, {
+                        type: 'bar',
+                        data: {
+                            labels: ["[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"2_Redes_sociais\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"4_TV_(ex.:_Globo)\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"8_Outros_(especifique)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"3_Indica\u00e7\u00e3o_de_influenciador\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"2_Redes_sociais\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"2_Redes_sociais\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"4_TV_(ex.:_Globo)\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"3_Indica\u00e7\u00e3o_de_influenciador\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"8_Outros_(especifique)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"3_Indica\u00e7\u00e3o_de_influenciador\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"3_Indica\u00e7\u00e3o_de_influenciador\"]", "[\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"2_Redes_sociais\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"2_Redes_sociais\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"2_Redes_sociais\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"1_Banner_dentro_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"2_Redes_sociais\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"2_Redes_sociais\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"8_Outros_(especifique)\"]", "[\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"2_Redes_sociais\",\"3_Indica\u00e7\u00e3o_de_influenciador\"]", "[\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"2_Redes_sociais\",\"4_TV_(ex.:_Globo)\"]", "[\"2_Redes_sociais\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"3_Indica\u00e7\u00e3o_de_influenciador\"]", "[\"2_Redes_sociais\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"4_TV_(ex.:_Globo)\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"2_Redes_sociais\"]", "[\"4_TV_(ex.:_Globo)\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"4_TV_(ex.:_Globo)\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"3_Indica\u00e7\u00e3o_de_influenciador\",\"2_Redes_sociais\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"4_TV_(ex.:_Globo)\",\"5_Indica\u00e7\u00e3o_de_amigos\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"4_TV_(ex.:_Globo)\",\"8_Outros_(especifique)\"]", "[\"5_Indica\u00e7\u00e3o_de_amigos\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"2_Redes_sociais\",\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"1_Banner_dentro_do_app_do_Z\u00e9\",\"0_Notifica\u00e7\u00e3o_do_app_do_Z\u00e9\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"1_Banner_dentro_do_app_do_Z\u00e9\"]", "[\"6_Streaming_(ex.:_Caz\u00e9_TV)\",\"7_Canal_de_WhatsApp_do_Z\u00e9\"]", "[\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"5_Indica\u00e7\u00e3o_de_amigos\"]", "[\"7_Canal_de_WhatsApp_do_Z\u00e9\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]", "[\"8_Outros_(especifique)\",\"6_Streaming_(ex.:_Caz\u00e9_TV)\"]"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [670, 358, 71, 66, 52, 41, 32, 31, 29, 15, 14, 7, 7, 5, 5, 5, 5, 4, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [44.85, 23.96, 4.75, 4.42, 3.48, 2.74, 2.14, 2.07, 1.94, 1.0, 0.94, 0.47, 0.47, 0.33, 0.33, 0.33, 0.33, 0.27, 0.2, 0.2, 0.2, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+        y: {
+            beginAtZero: true,
+            grid: {
+                color: 'rgba(0,0,0,0.1)'
+            }
+        },
+        x: {
+            grid: {
+                color: 'rgba(0,0,0,0.1)'
+            }
+        }
+    }
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 3</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_3"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_3 = document.getElementById('chart_3').getContext('2d');
+                    new Chart(ctx_3, {
+                        type: 'pie',
+                        data: {
+                            labels: ["4_5", "3_4", "2_3", "1_2", "0_1"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1034, 227, 142, 50, 41],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [69.21, 15.19, 9.5, 3.35, 2.74][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 4</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_4"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_4 = document.getElementById('chart_4').getContext('2d');
+                    new Chart(ctx_4, {
+                        type: 'pie',
+                        data: {
+                            labels: ["4_5", "3_4", "2_3", "1_2", "0_1"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [911, 260, 183, 81, 59],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [60.98, 17.4, 12.25, 5.42, 3.95][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 5</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_5"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_5 = document.getElementById('chart_5').getContext('2d');
+                    new Chart(ctx_5, {
+                        type: 'pie',
+                        data: {
+                            labels: ["4_5", "3_4", "2_3", "1_2", "0_1"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1040, 231, 140, 43, 40],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [69.61, 15.46, 9.37, 2.88, 2.68][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 6</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_6"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_6 = document.getElementById('chart_6').getContext('2d');
+                    new Chart(ctx_6, {
+                        type: 'pie',
+                        data: {
+                            labels: ["4_5", "3_4", "2_3", "0_1", "1_2"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1016, 257, 132, 45, 44],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [68.01, 17.2, 8.84, 3.01, 2.95][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 7</div>
+                <div class="question-meta">
+                    Tipo: Múltipla Escolha | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_7"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_7 = document.getElementById('chart_7').getContext('2d');
+                    new Chart(ctx_7, {
+                        type: 'pie',
+                        data: {
+                            labels: ["4_5", "3_4", "2_3", "1_2", "0_1"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1059, 228, 121, 46, 40],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [70.88, 15.26, 8.1, 3.08, 2.68][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 8</div>
+                <div class="question-meta">
+                    Tipo: Sim/Não | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_8"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_8 = document.getElementById('chart_8').getContext('2d');
+                    new Chart(ctx_8, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["N\u00e3o", "Nao", ".", "N\u00e3o tive", "Nenhuma", "N\u00e3o tive dificuldade", "Tranquilo", "Ok", "Nenhum problema", "Nada", "Foi tranquilo", "N", "Nenhuma dificuldade", "Sem problemas", "Tudo certo", "Nao tive", "Muito bom", "Top", "Tudo ok", "Tudo tranquilo", "N\u00e3o tive problema", "N\u00e3o tive problemas", "Bom", "Muito f\u00e1cil", "nao", "..", "M", "N\u00e3o tive.", "\u00d3timo", "...", "Boa", "Muito facil", "Nao tenho", "Nao tive problemas", "Nenhum", "N\u00e3o tive nenhum problema", "N\u00e3o.", "Super f\u00e1cil", "De boa", "Foi bem tranquilo", "F\u00e1cil", "Nao tive dificuldade", "N\u00e3o tenho", "N\u00e3o tive dificuldades", "Sem dificuldades", "Sim", "Simples", "Super tranquilo", "Tudo certo.", "n\u00e3o", "-", "Excelente", "Foi bom", "Na", "Nao tive nenhuma", "Nao tive problema", "Nem um problema", "N\u00e3o participei", "N\u00e3o tenho dificuldade", "N\u00e3o teve dificuldade", "N\u00e3o tive nenhuma dificuldade", "O", "Otimo", "Sem problema", "Tudo perfeito", "A", "Bem f\u00e1cil", "Bem tranquilo", "Facil", "Foi bem f\u00e1cil", "Foi de boa", "Foi facil", "Foi f\u00e1cil", "Foi f\u00e1cil participar", "Foi muito bom", "Foi muito f\u00e1cil", "Foi simples", "Foi super f\u00e1cil", "Foi tranquilo.", "Foi tudo bem", "Gostei de participar", "I", "Muito bom participar", "Muito simples", "Nada a declarar", "Nao tive nenhuma dificuldade", "Nao tive.", "Naontive", "Nd", "Nenhum problema.", "Nenhuma dificuldade.", "Nqo", "N\u00e3o tive nenhum problema.", "N\u00e3o tiver", "N\u00e3o!", "Oi", "R\u00e1pido", "Sem", "Sem dificuldade", "Sem dificuldade.", "Show", "Super r\u00e1pido", "T", "Tudo muito claro.", "Tudo muito simples", "Tudo ok.", "Valeu", "!!", ",", ".....", "1", "A campanha foi muito simples de ser entendida..", "A experi\u00eancia e muito boa", "A pesquisa \u00e9 objetiva", "Aaaaa", "Acessar o local de retirada.", "Achei confuso....", "Achei facil", "Achei uma excelente iniciativa do Z\u00e9 delivery.", "Adoro brindes das cervejas!", "Agrade\u00e7o por disponibilizar a promo\u00e7\u00e3o", "Ainda n\u00e3o soube da campanha", "Amo este aplicativo", "Ano consgeui acesso", "Aparece assim que finalizou o pedido.", "Apareceu r\u00e1pido", "Apenas efetuei a compra e marquei os placares e pronto", "Apenas faltou informa\u00e7\u00e3o apos a inscri\u00e7\u00e3o", "Apesar de n\u00e3o participar ativamente, foi simples de entender e como funciona.", "App super f\u00e1cil de usar", "Apto a participar.", "As informa\u00e7\u00f5es n\u00e3o foram claras", "As regras n\u00e3o s\u00e3o claras", "Auto explicativo", "B", "Bao", "Basicamente eu gostei da experi\u00eancia de participar ativamente das atividades do aplicativo", "Bem bolado o esquema de bola pelo ze", "Bem claro e explicativo", "Bem explixativo, bem tranquilo. Obrigada", "Bem facil", "Bem simples", "Bem tranquilo e auto explicativo", "Boa experi\u00eancia, s\u00f3 n\u00e3o ganhei kkk", "Bom de mais \ud83d\ude01", "Bom incentivo aos clientes", "Bom,", "Brincadeira muito legal", "Campanha bem clara", "Campanha muito boa, pre\u00e7o muito bom!", "Clareza total", "Com muita facilidade", "Como divers\u00e3o foi muito gratificante", "Consegui acompanhar o passo a passo", "Continuo sem saber que campanha \u00e9!! \ud83e\udd23\ud83e\udd23", "Cxxxxxx", "Demora de achar uma distribuidora e demora de entrega", "Demora demais", "Demora jo cadastro nanproko", "Demorado", "Depois da aposta feita, acompanhar o resultado", "Depois de enviar o bol\u00e3o, n\u00e3o encontrei ele novamente para conferir os jogos. \nE os cupons de frete gratis que ganhei todos venciam no mesmo dia entao acabei \"perdendo\" quase todos pois nao seria possivel usar todos em 1 dia s\u00f3.", "Depois n\u00e3o achei meus palpites,erros ou acertos.", "Depois que acertei um resultado do bolao nao consegui encontrar onde estava minha classificacao, meus pontos, enfim. Nao achei nada e deixei pra l\u00e1.", "Deu tudo certo", "Deveria ter mais", "Dificulda nenhuma s\u00f3 n\u00e3o tive tanta clareza", "Dificuldade de entender que precisaria colocar o zero como resultado", "Dificuldade nenhuma.", "Dif\u00edcil de entender", "Dif\u00edcil eu usar o app, poucas vantagens", "Dudu", "E muito bom", "E simples", "E tudo esclarecido", "Estava claro", "Est\u00e1 tudo bem explicado", "Eu acertei um e ate agora nao sei onque ganhei, pelo visto perdi", "Eu gostei muito do Z\u00e9 delivery", "Eu so comprei e acho que j\u00e1 participei", "Eu s\u00f3 tenho a agradecer por tudo", "Eu vi a promo\u00e7\u00e3o no momento que fechei um pedido. Faltou uma maneira de acompanhar nossas respostas, e s\u00f3 na primeira compra que recebi um bol\u00e3o pra preencher.", "Excelente!!!", "Exige que coloque o numero 0, isso nao deixa concluir a aposta, uma vez que o campo originario j\u00e1 \u00e9 0\u2026.", "Facil a explica\u00e7\u00e3o.", "Facil e didatico", "Facil participa\u00e7\u00e3o!", "Facilidade e praticidade \nMuito bom", "Falta de clareza", "Falta do produto em garrafa retorn\u00e1vel 300ml", "Ficou bem claro a campanha, mas poderia ser melhor trabalhada", "Foi bem clara a promo\u00e7\u00e3o", "Foi bem facil", "Foi bem f\u00e1cil.\nColoquei os palpites e pronto.\nRezando para acertar e ter a geladinhas o ano todo !!!", "Foi bem objetivo", "Foi bem simples", "Foi bem trabquilo, pois o link de participa\u00e7\u00e3o era bem espec\u00edfico e auto explicativo", "Foi bem tranquilo.", "Foi boa!", "Foi bom participar", "Foi de boas", "Foi divertido, uma distra\u00e7\u00e3o", "Foi f\u00e1cil e pratico", "Foi mto f\u00e1cil", "Foi muito bom a experi\u00eancia", "Foi muito bom e divertido participar", "Foi muito facil", "Foi muito f\u00e1cil o aplicativo \u00e9 muito bom", "Foi muito tranquilo, bem divertido. E ainda desenvolveu meu ego por conhecimentos futebol\u00edsticos na casa kkkkk", "Foi normal", "Foi rapido e pratico", "Foi r\u00e1pido e as informa\u00e7\u00f5es foram claras.", "Foi r\u00e1pido e f\u00e1cil", "Foi super facil de participar", "Foi super pratico", "Foi super simples", "Foi tranquilo e rapido", "Foi tranquilo me cadastrar", "Foi tranquilo para responder", "Foi tranquilo pra participar e gostei muito", "Foi tranquilo, bem simples", "Foi tudo bem claro para mim.", "Foi tudo muito facil e intuitivo", "Foi tudo muito tranquilo pra mim", "Foi tudo muito tranquilo... apesar de muito dif\u00edcil mas foi bem organizado", "Foi tudo \u00f3bvio e objetivo,mto bom e empolgante tbm..", "Foi uma boa experi\u00eancia.", "Foi uma experi\u00eancia muito legal e n\u00e3o tive grandes dificuldades para participar do bol\u00e3o.", "Foii f\u00e1cil", "F\u00e1cil demais", "F\u00e1cil e gratificante. Ganhei v\u00e1rios cupons", "F\u00e1cil e pr\u00e1tico", "F\u00e1cil,  r\u00e1pido..", "Gostaria de ganhar uma lata do Fluz\u00e3o da Budweiser", "Gostaria de saber se a pessoa ganhar , qual e pr\u00eamio ?", "Gostaria muito de ganhar o pr\u00eamio", "Gostei", "Gostei de fazer o bol\u00e3o", "Gostei de participar.", "Gosto de dar palpite", "Gosto do ze", "Gosto muito do App.", "Gt", "Htfh", "J", "Jl", "K", "Legal a iniciativa", "Links n\u00e3o aparecem ou n\u00e3o funcionam corretamente", "Maravilhosa a promo\u00e7\u00e3o espera q tenha muitas outras", "Mas na realidade descobri agora mas foi legal ter participado", "Mas, na segunda vez q fui comprar, pelo Cel. De meu filho, o entregador queria cobrar 33 reais a mais. Fiquei mto preocupada com golpe e esperamos q vc apurem o acontecido.", "Me explica como funciona mesmo o bol\u00e3o. Fiquei sabendo atrav\u00e9s do meu filho.", "Ms gostaria de ter sido a ganhadora", "Mt bom", "Mu", "Muita facilidade", "Muita facilidade em participar", "Muito bem esclarecido", "Muito boa a promo\u00e7\u00e3o", "Muito boa iniciatica , estao de parabens !", "Muito bom compro sempre bebidas bem geladas.", "Muito bom gostei", "Muito bom gostei muito", "Muito bom o app", "Muito bom!", "Muito clara", "Muito complicado", "Muito confuso", "Muito did\u00e1tico, f\u00e1cil", "Muito dif\u00edcil", "Muito facil e interativo", "Muito f\u00e1cil e r\u00e1pido obrigada ze", "Muito f\u00e1cil participar", "Muito pratico e r\u00e1pido", "Muito pr\u00e1tico", "Muito rapido", "Muito simples a participacao", "Muito tranquilo de participar!", "Muito. Boa", "N teve", "N tive", "NN s\u00f3 tive dificuldades", "NO", "Na hora de escanear,tampinha algumas n\u00e3o t\u00e1 ,mesmo ela n\u00e3o estando amassada n\u00e3o d\u00e1 para escanear", "Na participa\u00e7\u00e3o n\u00e3o, mas achei confuso saber qual jogo eu acertei depois e achei o frete gr\u00e1tis no mesmo dia, para cada acerto, muito ruim. Poderia ser acumulo de pontos no z\u00e9 a cada acerto", "Na \u00faltima compra n\u00e3o consegui enviar meu placar, e teve uma compra q fiz com uma budewaiser q n\u00e3o veio no meu pedido", "Nada a esclarecer", "Nada a reclamar", "Nada em espec\u00edfico", "Nada tive", "Nai", "Nao aparece sempre no menu principal", "Nao consegui ter acesso ao bolao quando precisei.", "Nao conseguia acessar meu palpite para ver se acertei ou nao.", "Nao conseguir entender como participar", "Nao doi muito claro", "Nao ficou claro se consegui participar ou nao", "Nao ficou muito claro onde apareceria o resultado e depois tive dificuldade em localizar no app onde estava esse bol\u00e3o para lembrar o que eu tinha jogado e se ja tinha acabado", "Nao foi tudo perfeito", "Nao sei ate agora se ganhei algo ou nao", "Nao sei se ganhei ou o que ganhava", "Nao tem segredo tudo facinho", "Nao tenho nada a apontar.", "Nao tenho nem um poblema ta tido esplicado certinho", "Nao teve", "Nao tive dificuldade nao, ate que foi f\u00e1cil", "Nao tive muito r\u00e1pido e f\u00e1cil", "Nao tive nemhum problema , na propria divulgacao ja foi bem explicado", "Nao tive nenhum problema", "Nao tive nenhum problema para participar", "Nao tive nenhum problema, foi super r\u00e1pido e f\u00e1cil", "Nao tive peoblema nenhum , s\u00f3 n\u00e3o estou satisfeita porque n\u00e3o ganhei rsrs", "Nao tive problema Algum", "Nao tive problema algum", "Nao tive problema nenhum", "Nao tive problemas para participar", "Nao tive problemas, apenas nao entendi as regras e oque valia", "Nao tive!", "Nao tivi nenhum problema", "Nao.", "Naotemho", "Necessidade de comprar apenas pelo app", "Nem sei do que se trata", "Nem t\u00f4 sabendo nada disso mal divulgado", "Nem uma", "Nem uma dificuldade", "Nemhuma", "Nenhum problema ou dificuldade.", "Nenhum problema, tudo bem especificado.", "Nenhuma diferen\u00e7a \u00e9 dificuldade.", "No app est\u00e1 bem claro as d\u00favidas", "No in\u00edcio n\u00e3o tinha entendido", "Normal", "Nunca", "Nunca  tive problemas", "Nunca Tive Nenhum problema", "Nunca consigo participar", "Nunca ganho mesmo", "Nunca tive", "Nunca tive problema", "Nunca tive problemas , mere\u00e7o um desconto em Z\u00e9", "Nunca tive problemas \u00e9 nem dificuldade pra entrar no Z\u00e9 deliver", "N\u00c3O,SUPER TRANQUILO \ud83e\udd1d", "N\u00e3o  tenho problema  achei \u00f3timo", "N\u00e3o  tive.", "N\u00e3o ,super tranquilo", "N\u00e3o Tive", "N\u00e3o conhe\u00e7o direito", "N\u00e3o consegui ber", "N\u00e3o consegui identificar as regras n\u00e3o tem toda informa\u00e7\u00e3o", "N\u00e3o consegui participar", "N\u00e3o consegui ver o resultado", "N\u00e3o conseguir acessar as minhas apostas depois de finalizada.\nN\u00e3o achei no app.", "N\u00e3o consigo", "N\u00e3o de f\u00e1cil intendimento", "N\u00e3o deu tudo tranquilo", "N\u00e3o encontrei o caminho paranretornar a promo\u00e7\u00e3o para conferir os resultados.", "N\u00e3o entendi como realmente funcionava", "N\u00e3o entendi direito.", "N\u00e3o entendo de futebol", "N\u00e3o estava claro as regras para participa\u00e7\u00e3o", "N\u00e3o estive problema algum", "N\u00e3o estiver dificuldade", "N\u00e3o estou conseguindo entrar na minha conta e gostaria de acessar minha conta no delivery de volta", "N\u00e3o estou conseguindo logar no app. Da errro", "N\u00e3o foi bem de boa", "N\u00e3o foi bem tranquilo", "N\u00e3o foi dif\u00edcil entretanto n\u00e3o entendo nada de futebol", "N\u00e3o foi super claro e f\u00e1cil", "N\u00e3o goi tudo bem tranquilo", "N\u00e3o gosto de sorteios", "N\u00e3o houve", "N\u00e3o houve dificuldade", "N\u00e3o houve problemas, s\u00f3 n\u00e3o vi os resultados quem ganhou. Recebi apenas. Msg que ganhei o bol\u00e3o e o pr\u00eamio foi frete gr\u00e1tis. Achei fraco o pr\u00eamio se realmente esse foi o pr\u00eamio principal ou se foi de consola\u00e7\u00e3o.", "N\u00e3o nenhum problema", "N\u00e3o nunca", "N\u00e3o participei do bol\u00e3o.", "N\u00e3o por\u00e9m ficou muito vago comdaria o premia\u00e7\u00e3o para acertar o bol\u00e3o n\u00e3o sei se ganhei alguma coisa ounperdi....", "N\u00e3o sabia nem que existia", "N\u00e3o sei", "N\u00e3o sei do que vcs est\u00e3o se referindo", "N\u00e3o sei fazer", "N\u00e3o sei o resultado", "N\u00e3o sei qual campanha \u00e9", "N\u00e3o sou muito de apostas", "N\u00e3o tem nenhum problema em participar", "N\u00e3o tenho dificuldade n\u00e3o", "N\u00e3o tenho problema n\u00e3o", "N\u00e3o teve resultados se ganhei ou n\u00e3o nunca saberemos", "N\u00e3o tibe problema, o sistema era bem auto explicativo.", "N\u00e3o tive !!", "N\u00e3o tive ,tudo foi tranquilo.", "N\u00e3o tive assesso a promo\u00e7\u00e3o", "N\u00e3o tive dificuldade em participar da campanha", "N\u00e3o tive dificuldade nenhuma", "N\u00e3o tive dificuldade nenhuma!", "N\u00e3o tive dificuldade para participar, mas tive dificuldade de acompanhar o resultado", "N\u00e3o tive dificuldade pra participar", "N\u00e3o tive dificuldade.", "N\u00e3o tive dificuldades para participar", "N\u00e3o tive d\u00favidas", "N\u00e3o tive nem um problema para participar", "N\u00e3o tive nenhum pbl", "N\u00e3o tive nenhum problema gra\u00e7as a Deus foi tudo muito resolvido obrigado", "N\u00e3o tive nenhum problema ou dificuldade.", "N\u00e3o tive nenhuma", "N\u00e3o tive nenhuma dificuldade em participar do bol\u00e3o", "N\u00e3o tive nenhuma dificuldade, s\u00f3 achei que o tempo de utiliza\u00e7\u00e3o do cupom \u00e9 muito curto", "N\u00e3o tive nenhuma dificuldade.", "N\u00e3o tive nenhuma.", "N\u00e3o tive problema com nada", "N\u00e3o tive problema!", "N\u00e3o tive problema.", "N\u00e3o tive problemas em participar", "N\u00e3o tive problemas em participar. S\u00f3 os seus distribuidores q sempre entregam a cerveja quente com pre\u00e7o de gelada \ud83d\ude11", "N\u00e3o tive problemas n\u00e3o", "N\u00e3o tive problemas.", "N\u00e3o tive resplando sobre algumas d\u00favidas", "N\u00e3o tive, bem tranquilo", "N\u00e3o tive, foi muito f\u00e1cil", "N\u00e3o tive, pois era bem facil acessar", "N\u00e3o tive, s\u00f3 n\u00e3o compreendi como \u00e9 o resultado se foi premiada.", "N\u00e3o tive,foi de f\u00e1cil entendimento", "N\u00e3o tivemos nenhum problema n\u00e3o", "N\u00e3o tranquilo...", "N\u00e3o tuve", "N\u00e3o vi", "N\u00e3o \u00e9 bem pr\u00e1tico", "N\u00e3o \u00e9 f\u00e1cil de mexe no app", "N\u00e3o, foi f\u00e1cil", "N\u00e3o, foi tranquilo", "N\u00e3o, nenhum.", "N\u00e3o,eu n\u00e3o tive dificuldade", "N\u00e3o,foi simples, r\u00e1pido e pr\u00e1tico", "N\u00e3o,participei ainda", "O APP \u00e9 muito f\u00e1cil de mexer", "O app travou uma vez", "O premio nao estava muito claro, mas o direcionamento foi facil", "Objetivo", "Obrigada", "Obrigada!", "Ocorreu tudo bem", "Oj", "Ola gostaria de deixar uma observa\u00e7\u00e3o, eu comprei cerveja Bud esses dias garrafinhas e veio com a altera\u00e7\u00e3o de gosto e j\u00e1 \u00e9 a segunda vez que pego e vem com essa altera\u00e7\u00e3o, gostaria que vcs investigasse sobre isso , obg !!!", "Os produtos teria que ser mas em conta, sem ter que pagar frete", "Para resgatar o cupom", "Para visualizar os resultados", "Parides e efici\u00eancia", "Participar foi muito f\u00e1cil,", "Participei para ganhar", "Pergunra 4", "Poderim liberar mais cupons para esse mundial", "Pois e", "Pra mim \u00e9 muito bom.esta de parab\u00e9ns.", "Pra poder achar o painel do bolao que respondi", "Praticamente f\u00e1cil", "Primeiro, fiz 2 pedidos e o aplicativo n\u00e3o abriu os palpites.\nSegundo, a facilidade de acompanhar seu desempenho foi p\u00e9ssima no site da Budweiser, bem diferente da Copa do Mundo de 2022.\nTerceiro e \u00faltimo, come\u00e7ou em cima do in\u00edcio do campeonato, eram jogos todos dias e ter direito a apenas 4 apostas foi injusto.\nSugest\u00e3o:No pr\u00f3ximo, voc\u00eas poderiam associar a quantidade de palpites ao a quantidade de Budweiser comprada; 6 Buds 4 palpites, 12 Buds 6 palpites...", "Problema algum,s\u00f3 que alguns palpites acertei e nada ganhei", "Problema nenhum", "Promo\u00e7\u00e3o excelente , e regras claras", "Pr\u00e1tica e r\u00e1pido Z\u00e9 dellyvery", "Pr\u00e1tico", "Pr\u00e1tico e r\u00e1pido", "Q", "Quando finalizei a compra j\u00e1 apareceu para digitar os palpites", "Quero brindes", "Quero cupom", "Quero ganhar 01 ano de Budweiser.", "Quero muito ganha esse premio", "Quero participar da final!!!\nPalmeiras campe\u00e3o mundial 2025", "Quero saber como participar", "Quero saber se eu ganhei alguma coisa?", "R", "Rapidez", "Rapido e pratico", "Recebi a mensagem e cliquei no link muito f\u00e1cil", "Recomendo", "Regras e pr\u00eamios n\u00e3o ficaram claros", "Rr", "R\u00e1pido e facil", "R\u00e1pido e f\u00e1cil.", "Saber dos resultados sem precisar fazer um novo pedido.", "Sem alteracao", "Sem assunto", "Sem comentarios", "Sem coment\u00e1rios", "Sem coment\u00e1rios!", "Sem dificuldade alguma.", "Sem dificuldades.", "Sem d\u00favidas e dificuldade", "Sem nem um problema em participar,  Z\u00e9 \u00e9 \u00f3timo", "Sem nenhum problema", "Sem nenhum problema, super facil", "Sem problema algum", "Sem problema bem explicado e nada espec\u00edfico", "Sem problema \u263a\ufe0f", "Sem problema.", "Sem problemas para participar.", "Sem problemas.", "Sempre bem r\u00e1pido e pr\u00e1tico", "Sempre d\u00e1 certo", "Sempre foi bem rapido", "Sempre foi excelente o atendimento", "Sempre muito f\u00e1cil", "Sempre muito f\u00e1cil e top", "Sempre nom", "Si me inscrevi", "Sim entrega", "Sim infelizmente Z\u00e9 delivery est\u00e1 deixando a desejar", "Simples de", "Skakks", "So cliquei e pronto", "So nao acertei nada mas, participei", "So nao entendi quem ganhava e o que ganhava e nem como", "So podiam mostrar um rank dos participantes", "Super", "Super facil", "Super facil de participar e super recomendo os bol\u00e3o e os super cupoms", "Super facil e pratico .", "Super f\u00e1cil a compra e muita agilidade", "Super tranquilo participar", "S\u00f3 a espera de ganhar", "S\u00f3 achei ruim ter que juntar pontos no Z\u00e9 recompensa para participar", "S\u00f3 apareceu uma vez para palpitar e n\u00e3o apareceu mais", "S\u00f3 as abas da competi\u00e7\u00e3o que era ruins", "S\u00f3 falta tempo", "S\u00f3 n\u00e3o achei t\u00e3o interessante", "S\u00f3 n\u00e3o consegui ver o resultado", "S\u00f3 n\u00e3o consegui ver os resultados", "S\u00f3 n\u00e3o consigo ver os ganhadores, de resto TD bem", "S\u00f3 seguir as informa\u00e7\u00f5es", "S\u00f3 tive acesso na primeira compra", "TD ok", "Tchau", "Td ok", "Tem que d\u00e1 mas cupons sou cliente a um tempo , bebidas tbm vir no pre\u00e7o bom seria muito bom", "Tinha q ser mais explicado", "Tive dificuldade em acessar as regras", "Tive n", "Tive n\u00e3o", "To", "Top experi\u00eancia", "Top so faltou eu ganhar", "Top, gostaria de participar muito mais vezes.", "Tou sou sempre bem atendida", "Tranquilho", "Tranquilo bem claro", "Tranquilo bem pratico e rapido", "Tranquilo e acess\u00edvel a todos", "Tranquilo e de f\u00e1cil acesso.", "Tranquilo.", "Tranquilos", "Tudk perfeito", "Tudo  certo", "Tudo bem claro", "Tudo bem simples", "Tudo bem simples.", "Tudo bom e tranquilo", "Tudo certo sem dificuldades.", "Tudo certo!", "Tudo certo, s\u00f3 falta eu ganhar", "Tudo claro e objetivo.", "Tudo correu bem.", "Tudo dentro dos conformes", "Tudo foi bem explicado e muito bem feito.", "Tudo foi muito tranquilo", "Tudo f\u00e1cil", "Tudo ik", "Tudo maravilhoso", "Tudo muito bem explicado \ud83d\udc4d", "Tudo muito bom", "Tudo muito claro", "Tudo muito explicativo", "Tudo muito facil", "Tudo muito facil e simples obg", "Tudo muito pr\u00e1tico e confi\u00e1vel", "Tudo muito r\u00e1pido e f\u00e1cil", "Tudo normal", "Tudo ocorre normal", "Tudo ok obrigada", "Tudo ok!", "Tudo r\u00e1pido", "Tudo r\u00e1pido e pr\u00e1tico.", "Tudo super esclarecedor", "T\u00e1 bom", "T\u00e1 suave", "Um pouco", "Unico problema \u00e9 que errei o placar de todos os jogos \ud83e\udd72\ud83d\ude02", "V", "Valeu Z\u00e9", "Vamos come\u00e7ar", "Vinho sempre vem quente!", "Vlw", "Voc\u00eas tem que fazer mais promo\u00e7\u00f5es", "X", "Z\u00e9 delivery e bom demais \ud83d\udc4f\ud83c\udf7a\ud83c\udf7a\ud83c\udf7a\ud83c\udf7a", "_", "azar no palpite,mas sorte na escolha da bebida !", "boa ideia do bol\u00e3o", "foi muito facil", "foi super tranquilo", "kk", "mao", "nao muito gacil", "nao tive", "nenhum problema", "nenhum problema, muito intuitivo", "nenhuma dificuldade", "n\u00e3o nenhuma", "n\u00e3o tenho dificuldade", "n\u00e3o tive", "n\u00e3o tive dificuldade", "n\u00e3o....tudo tranquilo,", "o z\u00e9 \u00e9 show", "tranquilo", "tudo bem explicado", "tudo tranquilo sem problemas", "\u00c9 bom", "\u00d1 foi tranquilo", "\u00d1 teve problema", "\u00d1.. foi tranquilo", "\u00d3tima campanha. Espero ter mais", "\u00d3timo atendimento", "\ud83d\udc4d", "\ud83d\ude18", "\ud83d\ude42"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [190, 125, 58, 47, 38, 24, 21, 20, 19, 18, 17, 15, 15, 14, 13, 12, 10, 10, 10, 10, 9, 9, 8, 8, 8, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)", "rgba(149, 165, 166, 0.8)", "rgba(52, 73, 94, 0.8)", "rgba(192, 57, 43, 0.8)", "rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)", "rgba(46, 204, 113, 0.8)", "rgba(155, 89, 182, 0.8)", "rgba(241, 196, 15, 0.8)", "rgba(230, 126, 34, 0.8)", "rgba(26, 188, 156, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)", "rgba(149, 165, 166, 1)", "rgba(52, 73, 94, 1)", "rgba(192, 57, 43, 1)", "rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)", "rgba(46, 204, 113, 1)", "rgba(155, 89, 182, 1)", "rgba(241, 196, 15, 1)", "rgba(230, 126, 34, 1)", "rgba(26, 188, 156, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [12.72, 8.37, 3.88, 3.15, 2.54, 1.61, 1.41, 1.34, 1.27, 1.2, 1.14, 1.0, 1.0, 0.94, 0.87, 0.8, 0.67, 0.67, 0.67, 0.67, 0.6, 0.6, 0.54, 0.54, 0.54, 0.4, 0.4, 0.4, 0.4, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07, 0.07][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        
+            <div class="question-header">
+                <div class="question-title">Pergunta 9</div>
+                <div class="question-meta">
+                    Tipo: Sim/Não | 
+                    Respostas: 1494 | 
+                    Taxa: 100.0%
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="chart_9"></canvas>
+                </div>
+                
+                <script>
+                    const ctx_9 = document.getElementById('chart_9').getContext('2d');
+                    new Chart(ctx_9, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["1_N\u00e3o", "0_Sim_(especifique)"],
+                            datasets: [{
+                                label: 'Respostas',
+                                data: [1387, 107],
+                                backgroundColor: ["rgba(52, 152, 219, 0.8)", "rgba(231, 76, 60, 0.8)"],
+                                borderColor: ["rgba(52, 152, 219, 1)", "rgba(231, 76, 60, 1)"],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        padding: 20,
+                                        usePointStyle: true
+                                    }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.raw;
+                                            const percentage = [92.84, 7.16][context.dataIndex];
+                                            return label + ': ' + value + ' (' + percentage.toFixed(1) + '%)';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {}
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="section">
+            <h2>💡 Insights e Recomendações</h2>
+            
+            <ul class="insights-list">
+                
+                <li>📈 Dados prontos para análise mais aprofundada e tomada de decisões</li>
+                <li>🔄 Recomenda-se acompanhar tendências em futuras pesquisas</li>
+            </ul>
+            
+            <h3>Recomendações de Ação</h3>
+            <ul class="insights-list">
+                <li>🎯 Focar em perguntas com baixa taxa de resposta para melhorar engajamento</li>
+                <li>📊 Utilizar visualizações recomendadas para apresentações executivas</li>
+                <li>🔍 Investigar padrões interessantes identificados nos dados</li>
+                <li>📅 Planejar pesquisas de follow-up baseadas nos resultados</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Relatório gerado automaticamente pelo Excel Processing Workflow</p>
+            <p>13/08/2025 às 15:47:00</p>
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,77 @@
+agent:
+  name: "Excel Separator Agent"
+  role: "Data Processor"
+  version: 1.0
+  agent_id: "excel-separator-agent"
+  description: >
+    Agent specializing in reading and separating Excel files into structured data.
+    Processes XLSX files and extracts column data for further analysis.
+
+model:
+  id: claude-sonnet-4-20250514
+  provider: anthropic
+  max_tokens: 4000
+  temperature: 0.1
+
+memory:
+  num_history_runs: 5
+  enable_user_memories: true
+  enable_agentic_memory: false
+  add_history_to_messages: true
+
+storage:
+  type: postgres
+  table_name: excel_separator_agent
+  auto_upgrade_schema: true
+
+markdown: false
+
+knowledge:
+  search_knowledge: false
+  valid_metadata_filters: []
+  enable_agentic_knowledge_filters: false
+
+instructions: |
+  Você é um agente especializado em processamento de arquivos Excel (XLSX).
+  
+  Suas principais responsabilidades:
+  1. Ler e analisar arquivos Excel (.xlsx)
+  2. Identificar e separar colunas em estruturas organizadas
+  3. Extrair dados de forma estruturada para análise posterior
+  4. Validar a integridade dos dados extraídos
+  5. Fornecer metadados sobre o arquivo processado
+  
+  Diretrizes de processamento:
+  - Sempre verifique a estrutura do arquivo Excel antes de processar
+  - Identifique o tipo de dados em cada coluna (texto, números, datas, etc.)
+  - Mantenha a integridade dos dados durante a separação
+  - Forneça informações claras sobre o que foi extraído
+  - Relate qualquer problema ou inconsistência encontrada
+  
+  Formato de saída:
+  - Dados estruturados em formato JSON
+  - Metadados sobre cada coluna (tipo, quantidade de registros, etc.)
+  - Relatório de validação dos dados extraídos
+
+expected_output: |
+  Dados estruturados em formato JSON contendo:
+  - Colunas separadas e organizadas
+  - Metadados de cada coluna
+  - Estatísticas dos dados processados
+  - Relatório de validação
+
+show_tool_calls: true
+
+success_criteria: >
+  SUCESSO = Arquivo Excel processado com sucesso, dados separados em estruturas
+  organizadas e validados para processamento posterior
+
+tools:
+  - name: read_excel_file
+    description: "Lê arquivos Excel e extrai dados"
+  - name: validate_data_structure
+    description: "Valida a estrutura dos dados extraídos"
+  - name: generate_column_metadata
+    description: "Gera metadados sobre as colunas processadas"
+
+add_datetime_to_instructions: true 
