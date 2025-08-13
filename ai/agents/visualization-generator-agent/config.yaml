@@ -1,0 +1,270 @@
+agent:
+  name: "Visualization Generator"
+  role: "Professional chart and graph generation specialist for survey data"
+  version: 1.0.0
+  agent_id: "visualization-generator-agent"
+  description: >
+    Advanced visualization generator that creates professional, stakeholder-ready
+    charts and graphs based on classified survey data. Specializes in appropriate
+    chart selection, professional styling, and interactive visualizations.
+
+model:
+  id: claude-sonnet-4-20250514
+  provider: anthropic
+  max_tokens: 4000
+  temperature: 0.1
+
+# AGNO native context - automatically injected via context functions
+add_context: true
+resolve_context: true
+
+memory:
+  num_history_runs: 6
+  enable_user_memories: true
+  enable_agentic_memory: true
+  add_history_to_messages: true
+
+storage:
+  type: postgres
+  table_name: agents_visualization_generator
+  auto_upgrade_schema: true
+
+markdown: false
+
+knowledge:
+  search_knowledge: true
+  valid_metadata_filters:
+  - visualization_type
+  - chart_design
+  - data_visualization
+  enable_agentic_knowledge_filters: true
+
+instructions: |
+  You are a professional visualization specialist focused on creating stakeholder-ready charts and graphs for survey data analysis.
+  
+  Your core responsibilities include:
+  
+  **Chart Type Selection:**
+  - Choose optimal visualization types based on data classification
+  - Consider audience, purpose, and data characteristics
+  - Apply data visualization best practices and principles
+  - Ensure accessibility and readability standards
+  
+  **Categorical Data Visualizations:**
+  - Pie charts for proportional data (≤6 categories)
+  - Horizontal bar charts for easy label reading
+  - Donut charts for modern, clean appearance
+  - Stacked bar charts for ordinal data comparisons
+  - Treemap for hierarchical categorical data
+  
+  **Numerical Data Visualizations:**
+  - Histograms for distribution analysis
+  - Box plots for statistical summaries and outliers
+  - Density plots for smooth distribution curves
+  - Scatter plots for relationship analysis
+  - Line charts for trend visualization
+  
+  **Temporal Data Visualizations:**
+  - Time series line charts for trends over time
+  - Area charts for cumulative values
+  - Calendar heatmaps for temporal patterns
+  - Trend analysis with moving averages
+  
+  **Textual Data Visualizations:**
+  - Word clouds for key term frequency
+  - Sentiment analysis charts for opinion data
+  - Frequency charts for response categorization
+  - Text analysis dashboards for insights
+  
+  **Professional Styling Standards:**
+  - Consistent color palettes (blues, grays, accent colors)
+  - Clear, readable fonts (Arial, Helvetica, Open Sans)
+  - Appropriate sizing for presentation contexts
+  - Professional layouts with proper spacing
+  - Brand-neutral designs suitable for business use
+  
+  **Interactive Features:**
+  - Hover tooltips with detailed information
+  - Zoom and pan capabilities where appropriate
+  - Filter controls for data exploration
+  - Export capabilities (PNG, SVG, PDF)
+  - Responsive design for different screen sizes
+  
+  **Data Quality Integration:**
+  - Handle missing data appropriately
+  - Display confidence intervals where relevant
+  - Show sample sizes and statistical significance
+  - Include data quality indicators
+  - Provide methodology notes
+  
+  **Chart Optimization:**
+  - Optimize for clarity over complexity
+  - Use appropriate scales and axes
+  - Include meaningful titles and labels
+  - Add context through annotations
+  - Ensure color accessibility (colorblind-friendly)
+  
+  **Batch Processing:**
+  - Generate multiple charts efficiently
+  - Maintain consistency across chart series
+  - Apply themes and branding uniformly
+  - Coordinate layouts for dashboard integration
+  - Prepare charts for various output formats
+
+expected_output: |
+  Professional visualization deliverables including:
+  
+  1. **Chart Generation Results:**
+     - Successfully generated charts for each data column
+     - Appropriate chart types matched to data characteristics
+     - Professional styling with consistent themes
+     - Interactive features and export capabilities
+  
+  2. **Chart Metadata:**
+     - Chart specifications and parameters
+     - Data sources and preprocessing notes
+     - Styling choices and rationale
+     - Technical requirements and dependencies
+  
+  3. **Quality Assurance:**
+     - Visual quality validation
+     - Accessibility compliance checks
+     - Cross-browser compatibility confirmation
+     - Performance optimization metrics
+  
+  4. **Export-Ready Files:**
+     - High-resolution PNG files for presentations
+     - Vector SVG files for scalability
+     - Interactive HTML files for web display
+     - PDF versions for report inclusion
+
+show_tool_calls: false
+
+knowledge_filter:
+  max_results: 6
+  search_config:
+    include_metadata: true
+    use_semantic_search: true
+    enable_hybrid_search: true
+  relevance_threshold: 0.7
+
+success_criteria: >
+  SUCESSO = Professional, accurate visualizations that effectively communicate
+  survey insights with appropriate chart types and stakeholder-ready presentation
+
+visualization_standards:
+  color_palettes:
+    primary: ["#2E86AB", "#A23B72", "#F18F01", "#C73E1D"]
+    secondary: ["#5EAFC5", "#B85A7A", "#F4A73B", "#D1654A"]
+    grayscale: ["#2D3436", "#636E72", "#B2BEC3", "#DDD"]
+    accessible: ["#1B9E77", "#D95F02", "#7570B3", "#E7298A"]
+  
+  fonts:
+    title: "Arial Bold, 16-18px"
+    labels: "Arial Regular, 12-14px" 
+    annotations: "Arial Regular, 10-12px"
+  
+  dimensions:
+    standard: "800x600px"
+    wide: "1200x600px"
+    square: "600x600px"
+    mobile: "400x300px"
+
+chart_specifications:
+  categorical:
+    pie_chart:
+      max_categories: 6
+      show_percentages: true
+      legend_position: "right"
+      colors: "primary_palette"
+    
+    bar_chart:
+      orientation: "horizontal"
+      sort_by: "value_desc"
+      show_values: true
+      grid_lines: true
+    
+    donut_chart:
+      inner_radius: 0.4
+      show_center_label: true
+      hover_effects: true
+  
+  numerical:
+    histogram:
+      bins: "auto"
+      show_distribution_curve: true
+      transparency: 0.7
+      grid_lines: true
+    
+    box_plot:
+      show_outliers: true
+      whisker_style: "1.5_iqr"
+      notched: false
+      colors: "grayscale"
+    
+    line_chart:
+      line_width: 2
+      marker_size: 4
+      smooth_curve: false
+      confidence_intervals: true
+  
+  temporal:
+    time_series:
+      date_format: "auto"
+      trend_line: true
+      annotations: true
+      zoom_enabled: true
+  
+  textual:
+    word_cloud:
+      max_words: 100
+      background_color: "white"
+      colormap: "viridis"
+      font_size_range: [10, 100]
+
+suggested_actions:
+  chart_generation:
+  - analyze_data_characteristics
+  - select_chart_type
+  - apply_professional_styling
+  - generate_interactive_features
+  - export_multiple_formats
+
+escalation_triggers:
+  quality_issues:
+  - "chart_generation_failed"
+  - "data_incompatible"
+  - "styling_errors"
+  - "export_failures"
+  - "accessibility_violations"
+
+add_datetime_to_instructions: true
+
+# Context configuration for visualization generation
+context_config:
+  enable_user_context: true
+  enable_session_context: true
+  enable_system_context: true
+  enable_tenant_context: true
+  personalization_level: "presentation"
+  user_segment: "business_stakeholder"
+
+# Technical configuration
+technical_requirements:
+  libraries:
+    - plotly: "interactive charts"
+    - matplotlib: "static charts"
+    - seaborn: "statistical visualizations"
+    - wordcloud: "text visualizations"
+  
+  export_formats:
+    - png: "high_resolution"
+    - svg: "vector_scalable"
+    - html: "interactive_web"
+    - pdf: "report_inclusion"
+  
+  performance:
+    max_data_points: 10000
+    render_timeout: 30  # seconds
+    memory_limit: "512MB"
+    parallel_generation: true

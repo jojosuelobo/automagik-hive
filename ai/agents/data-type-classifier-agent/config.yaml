@@ -1,0 +1,248 @@
+agent:
+  name: "Data Type Classifier"
+  role: "AI-powered survey data type detection and classification specialist"
+  version: 1.0.0
+  agent_id: "data-type-classifier-agent"
+  description: >
+    Intelligent data type classifier that analyzes survey columns and automatically
+    determines whether data is categorical, numerical, temporal, or textual.
+    Uses AI reasoning to understand data patterns and context.
+
+model:
+  id: claude-sonnet-4-20250514
+  provider: anthropic
+  max_tokens: 4000
+  temperature: 0.1
+
+# AGNO native context - automatically injected via context functions
+add_context: true
+resolve_context: true
+
+memory:
+  num_history_runs: 8
+  enable_user_memories: true
+  enable_agentic_memory: true
+  add_history_to_messages: true
+
+storage:
+  type: postgres
+  table_name: agents_data_type_classifier
+  auto_upgrade_schema: true
+
+markdown: false
+
+knowledge:
+  search_knowledge: true
+  valid_metadata_filters:
+  - data_classification
+  - survey_analysis
+  - statistical_analysis
+  enable_agentic_knowledge_filters: true
+
+instructions: |
+  You are a data type classification specialist with expertise in survey data analysis and statistical pattern recognition.
+  
+  Your core responsibilities include:
+  
+  **Intelligent Data Type Detection:**
+  - Analyze sample values from survey columns to determine data types
+  - Classify data as categorical, numerical, temporal, or textual
+  - Consider context and survey methodology in classification decisions
+  - Handle edge cases and mixed data types appropriately
+  
+  **Categorical Data Recognition:**
+  - Multiple choice responses (A, B, C, D or 1, 2, 3, 4)
+  - Yes/No or True/False responses
+  - Rating scales (1-5, 1-10, Likert scales)
+  - Ordinal data with natural ordering
+  - Nominal categories without inherent order
+  
+  **Numerical Data Analysis:**
+  - Continuous numerical values (measurements, scores)
+  - Discrete counts and frequencies
+  - Scale ratings and survey scores
+  - Percentages and ratios
+  - Statistical distributions and ranges
+  
+  **Temporal Data Detection:**
+  - Date fields (various formats)
+  - Timestamps and datetime values
+  - Time periods and durations
+  - Sequential time-based responses
+  
+  **Textual Data Identification:**
+  - Open-ended survey responses
+  - Comments and feedback text
+  - Descriptions and explanations
+  - Free-form textual input
+  - Long-form narrative responses
+  
+  **Advanced Classification Logic:**
+  - Consider sample size and data variety
+  - Analyze value distributions and patterns
+  - Account for survey context and question types
+  - Handle missing values and data quality issues
+  - Provide confidence scores for classifications
+  
+  **Statistical Analysis:**
+  - Calculate basic descriptive statistics for each data type
+  - Identify outliers and anomalies
+  - Assess data distribution characteristics
+  - Recommend appropriate visualization types
+  
+  **Quality Assessment:**
+  - Evaluate data consistency within columns
+  - Flag potential data quality issues
+  - Suggest data cleaning recommendations
+  - Assess suitability for different analysis types
+  
+  **Key Classification Principles:**
+  - Prioritize survey context over pure statistical analysis
+  - Consider the intended use of the data for visualization
+  - Maintain consistency across similar survey questions
+  - Provide clear reasoning for classification decisions
+  - Flag uncertain cases for manual review
+
+expected_output: |
+  Comprehensive data type classification results including:
+  
+  1. **Primary Data Type Classification:**
+     - Categorical (nominal/ordinal)
+     - Numerical (continuous/discrete)
+     - Temporal (dates/timestamps)
+     - Textual (open-ended/comments)
+  
+  2. **Detailed Classification Metadata:**
+     - Confidence score (0-100%)
+     - Classification reasoning
+     - Statistical characteristics
+     - Recommended visualization types
+  
+  3. **Data Quality Assessment:**
+     - Consistency evaluation
+     - Missing value patterns
+     - Outlier detection
+     - Data cleaning recommendations
+  
+  4. **Visualization Recommendations:**
+     - Optimal chart types for each data type
+     - Styling and formatting suggestions
+     - Interactive features recommendations
+     - Statistical analysis possibilities
+
+show_tool_calls: false
+
+knowledge_filter:
+  max_results: 8
+  search_config:
+    include_metadata: true
+    use_semantic_search: true
+    enable_hybrid_search: true
+  relevance_threshold: 0.7
+
+success_criteria: >
+  SUCESSO = Accurate data type classification with high confidence scores,
+  appropriate visualization recommendations, comprehensive quality assessment
+
+classification_framework:
+  categorical_indicators:
+    - limited_unique_values: "< 20 unique values or < 10% of total rows"
+    - text_patterns: "A/B/C, Yes/No, 1-5 scales, categorical labels"
+    - ordinal_patterns: "Natural ordering, rating scales, ranked responses"
+    - nominal_patterns: "No natural ordering, category labels, groups"
+  
+  numerical_indicators:
+    - data_type_patterns: "int, float, numeric values"
+    - statistical_properties: "Mean, median, standard deviation applicable"
+    - continuous_patterns: "Measurements, scores, percentages"
+    - discrete_patterns: "Counts, frequencies, whole numbers"
+  
+  temporal_indicators:
+    - date_patterns: "Date formats, timestamp patterns"
+    - time_series: "Sequential time-based data"
+    - temporal_keywords: "date, time, when, period"
+  
+  textual_indicators:
+    - length_patterns: "Average length > 10 characters"
+    - content_patterns: "Sentences, paragraphs, descriptions"
+    - language_patterns: "Natural language, comments, feedback"
+
+suggested_actions:
+  classification_tasks:
+  - analyze_sample_data
+  - detect_patterns
+  - calculate_statistics
+  - assess_quality
+  - recommend_visualizations
+
+escalation_triggers:
+  uncertainty_keywords:
+  - "mixed data types"
+  - "unclear pattern"
+  - "low confidence"
+  - "inconsistent data"
+  - "manual review needed"
+
+add_datetime_to_instructions: true
+
+# Context configuration for data classification
+context_config:
+  enable_user_context: true
+  enable_session_context: true
+  enable_system_context: true
+  enable_tenant_context: true
+  personalization_level: "analytical"
+  user_segment: "data_scientist"
+
+# Statistical thresholds for classification
+classification_thresholds:
+  categorical:
+    max_unique_ratio: 0.1  # Max unique values as ratio of total rows
+    max_unique_absolute: 20  # Max absolute unique values
+    min_sample_size: 5  # Minimum samples needed for classification
+  
+  numerical:
+    min_numeric_ratio: 0.8  # Minimum ratio of numeric values
+    outlier_threshold: 3.0  # Standard deviations for outlier detection
+  
+  temporal:
+    date_format_confidence: 0.7  # Confidence threshold for date detection
+  
+  textual:
+    min_avg_length: 10  # Minimum average character length
+    min_word_count: 3  # Minimum average word count
+
+# Visualization mapping
+visualization_mapping:
+  categorical:
+    nominal:
+      - pie_chart
+      - horizontal_bar_chart
+      - donut_chart
+    ordinal:
+      - horizontal_bar_chart
+      - stacked_bar_chart
+      - radar_chart
+  
+  numerical:
+    continuous:
+      - histogram
+      - box_plot
+      - density_plot
+      - scatter_plot
+    discrete:
+      - bar_chart
+      - histogram
+      - line_chart
+  
+  temporal:
+    - time_series_line
+    - area_chart
+    - calendar_heatmap
+    - trend_analysis
+  
+  textual:
+    - word_cloud
+    - sentiment_analysis
+    - frequency_chart
+    - text_analysis

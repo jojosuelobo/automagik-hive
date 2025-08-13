@@ -1,0 +1,172 @@
+workflow:
+  name: Survey Data Visualization Workflow
+  workflow_id: survey-data-visualization-workflow
+  version: 1.0.0
+  description: Automated survey data analysis and visualization pipeline that processes XLSX files with pesquisa columns and generates professional dashboards
+
+model:
+  provider: anthropic
+  id: claude-sonnet-4-20250514
+  temperature: 0.1
+  max_tokens: 4000
+
+storage:
+  type: postgres
+  table_name: survey_visualization_workflows
+  auto_upgrade_schema: true
+
+memory:
+  num_history_runs: 5
+  enable_user_memories: true
+  enable_agentic_memory: true
+  add_history_to_messages: true
+  enable_session_summaries: true
+  add_memory_references: true
+  add_session_summary_references: true
+
+display:
+  markdown: true
+  show_tool_calls: false
+  add_datetime_to_instructions: true
+
+context:
+  add_state_in_messages: true
+  enable_agentic_context: true
+  share_member_interactions: true
+
+events:
+  store_events: true
+  events_to_skip: []
+
+streaming:
+  stream: true
+  stream_member_events: true
+  show_members_responses: true
+  stream_intermediate_steps: true
+
+instructions: |
+  You are a survey data visualization workflow coordinator specializing in automated analysis of research data.
+  
+  Your primary functions:
+  
+  1. **Data Processing Pipeline**
+     - Import and validate XLSX survey files
+     - Extract columns containing "pesquisa" pattern
+     - Automatically classify data types (categorical, numerical, temporal, textual)
+     - Handle missing data and data quality issues
+  
+  2. **Intelligent Visualization**
+     - Generate appropriate charts based on data type detection
+     - Apply professional styling and color schemes
+     - Create interactive visualizations for stakeholder presentation
+     - Generate statistical insights and summaries
+  
+  3. **Dashboard Generation**
+     - Compile comprehensive dashboards with executive summaries
+     - Generate automated insights and key findings
+     - Export to multiple formats (PDF, HTML, PNG)
+     - Ensure visualizations are presentation-ready
+  
+  4. **Quality Assurance**
+     - Validate data integrity throughout pipeline
+     - Provide clear error messages and resolution guidance
+     - Log processing steps for audit trails
+     - Ensure consistent professional output
+  
+  Your workflow follows these stages:
+  1. Excel import and column filtering
+  2. Data type classification and validation
+  3. Parallel visualization generation
+  4. Insight generation and dashboard assembly
+  5. Export and stakeholder delivery
+
+expected_output: |
+  Professional survey analysis deliverables including:
+  
+  1. Automated data type classification for all survey columns
+  2. Appropriate visualizations for each data type:
+     - Categorical data: pie charts, bar charts, donut charts
+     - Numerical data: histograms, box plots, trend lines
+     - Textual data: word clouds, sentiment analysis
+     - Temporal data: time series, area charts
+  3. Interactive dashboard with executive summary
+  4. Statistical insights and key findings
+  5. Export-ready files in multiple formats
+  6. Processing logs and quality validation reports
+
+success_criteria: |
+  Successful survey analysis workflow execution with:
+  - All "pesquisa*" columns correctly identified and processed
+  - Accurate data type classification for each column
+  - Professional visualizations following best practices
+  - Clear insights and actionable recommendations
+  - Export files ready for stakeholder presentation
+  - Complete audit trail and processing logs
+
+workflow_parameters:
+  supported_file_formats:
+    - xlsx
+    - csv
+  
+  data_types:
+    categorical:
+      - multiple_choice
+      - yes_no
+      - rating_scale
+    numerical:
+      - continuous
+      - discrete
+      - scale_ratings
+    textual:
+      - open_ended
+      - comments
+      - descriptions
+    temporal:
+      - dates
+      - timestamps
+      - periods
+  
+  visualization_types:
+    categorical:
+      - pie_chart
+      - horizontal_bar
+      - donut_chart
+      - stacked_bar
+    numerical:
+      - histogram
+      - box_plot
+      - line_chart
+      - scatter_plot
+    textual:
+      - word_cloud
+      - sentiment_analysis
+      - frequency_chart
+    temporal:
+      - time_series
+      - area_chart
+      - trend_line
+  
+  export_formats:
+    - pdf_report
+    - html_dashboard
+    - png_charts
+    - csv_processed_data
+    - json_insights
+
+quality_controls:
+  data_validation:
+    - column_presence_check
+    - data_type_consistency
+    - missing_value_handling
+    - outlier_detection
+  
+  visualization_standards:
+    - consistent_color_schemes
+    - readable_fonts_and_sizing
+    - appropriate_chart_types
+    - professional_styling
+  
+  output_validation:
+    - file_integrity_checks
+    - export_format_validation
+    - stakeholder_readiness_review
