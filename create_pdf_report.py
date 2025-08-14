@@ -37,24 +37,49 @@ def load_survey_data_and_create_charts(analysis_data):
             # Create inline chart for categorical data
             value_counts = col_data.value_counts()
             
-            fig = px.bar(
-                x=value_counts.values,
-                y=value_counts.index,
-                orientation='h',
-                title=f"Distribuição de Respostas - {col}",
-                labels={'x': 'Número de Respostas', 'y': 'Opções'},
-                color=value_counts.values,
-                color_continuous_scale='viridis'
-            )
-            
-            fig.update_layout(
-                height=400,
-                title_font_size=14,
-                xaxis_title_font_size=12,
-                yaxis_title_font_size=12,
-                margin=dict(l=20, r=20, t=40, b=20),
-                showlegend=False
-            )
+            # Use pie chart for binary data (2 options), bar chart for more options
+            if len(value_counts) == 2:
+                # Pie chart for binary data (e.g., SIM/NÃO)
+                fig = px.pie(
+                    values=value_counts.values,
+                    names=value_counts.index,
+                    title=f"Distribuição de Respostas - {col}",
+                    color_discrete_sequence=['#667eea', '#764ba2']
+                )
+                
+                fig.update_traces(
+                    textposition='inside', 
+                    textinfo='percent+label',
+                    hovertemplate='<b>%{label}</b><br>%{value} respostas<br>%{percent}<extra></extra>'
+                )
+                
+                fig.update_layout(
+                    height=400,
+                    title_font_size=14,
+                    margin=dict(l=20, r=20, t=40, b=20),
+                    showlegend=True,
+                    legend=dict(orientation="h", yanchor="bottom", y=-0.1, xanchor="center", x=0.5)
+                )
+            else:
+                # Bar chart for multiple options
+                fig = px.bar(
+                    x=value_counts.values,
+                    y=value_counts.index,
+                    orientation='h',
+                    title=f"Distribuição de Respostas - {col}",
+                    labels={'x': 'Número de Respostas', 'y': 'Opções'},
+                    color=value_counts.values,
+                    color_continuous_scale='viridis'
+                )
+                
+                fig.update_layout(
+                    height=400,
+                    title_font_size=14,
+                    xaxis_title_font_size=12,
+                    yaxis_title_font_size=12,
+                    margin=dict(l=20, r=20, t=40, b=20),
+                    showlegend=False
+                )
             
             # Convert to HTML without external dependencies
             charts_html[col] = fig.to_html(include_plotlyjs='inline', div_id=f"chart_{col.replace('/', '_')}")
