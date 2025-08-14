@@ -10,6 +10,84 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 from datetime import datetime
+import re
+
+def detect_multiple_choice_question(col_data):
+    """Detect if a question is multiple choice based on data patterns"""
+    if len(col_data) == 0:
+        return False
+    
+    # Check for common multiple choice patterns
+    sample_responses = col_data.head(50).astype(str)
+    
+    # Pattern 1: JSON-like arrays ["0_Option","1_Option"]
+    json_pattern = sample_responses.str.contains(r'\[".*"\]', na=False).sum()
+    
+    # Pattern 2: Comma-separated values with prefixes
+    comma_pattern = sample_responses.str.contains(r'\d+_.*,\d+_.*', na=False).sum()
+    
+    # Pattern 3: Multiple quoted options
+    quote_pattern = sample_responses.str.contains(r'".*",".*"', na=False).sum()
+    
+    # If more than 30% of samples show multiple choice patterns
+    total_patterns = json_pattern + comma_pattern + quote_pattern
+    return (total_patterns / len(sample_responses)) > 0.3
+
+def parse_multiple_choice_data(col_data):
+    """Parse multiple choice data and return individual option counts"""
+    option_counts = {}
+    total_respondents = len(col_data)
+    
+    for response in col_data:
+        if pd.isna(response) or response == '':
+            continue
+            
+        response_str = str(response).strip()
+        options = []
+        
+        # Parse JSON-like format: ["0_Option","1_Option"]
+        if response_str.startswith('[') and response_str.endswith(']'):
+            try:
+                # Remove brackets and split by comma
+                inner = response_str[1:-1]
+                raw_options = [opt.strip().strip('"') for opt in inner.split('","')]
+                options.extend(raw_options)
+            except:
+                # Fallback: treat as single option
+                options.append(response_str)
+        
+        # Parse comma-separated format: "0_Option","1_Option" or 0_Option,1_Option
+        elif ',' in response_str:
+            # Split by comma and clean quotes
+            raw_options = [opt.strip().strip('"') for opt in response_str.split(',')]
+            options.extend(raw_options)
+        
+        else:
+            # Single option
+            options.append(response_str)
+        
+        # Count each option
+        for option in options:
+            if option and option.strip():
+                # Clean option text: remove numeric prefixes and underscores
+                cleaned = option.strip()
+                
+                # Remove numeric prefixes like "0_", "1_", etc.
+                cleaned = re.sub(r'^\d+_', '', cleaned)
+                
+                # Replace underscores with spaces
+                cleaned = cleaned.replace('_', ' ')
+                
+                # Clean up common formatting issues
+                cleaned = cleaned.replace('(ex.:', '(ex.: ')
+                cleaned = cleaned.strip()
+                
+                if cleaned:
+                    option_counts[cleaned] = option_counts.get(cleaned, 0) + 1
+    
+    # Sort by frequency and return top options
+    sorted_options = sorted(option_counts.items(), key=lambda x: x[1], reverse=True)
+    return sorted_options[:15], total_respondents  # Limit to top 15 options
 
 def load_survey_data_and_create_charts(analysis_data):
     """Load survey data and create inline charts"""
@@ -33,7 +111,57 @@ def load_survey_data_and_create_charts(analysis_data):
         stats = analysis_data['statistics'].get(col, {})
         chart_type = stats.get('chart_type', 'unknown')
         
-        if chart_type == 'categorical':
+        # Check if this is a multiple choice question
+        is_multiple_choice = detect_multiple_choice_question(col_data)
+        
+        if is_multiple_choice:
+            # Handle multiple choice questions with horizontal bar chart
+            option_data, total_respondents = parse_multiple_choice_data(col_data)
+            
+            if option_data:
+                options = [item[0] for item in option_data]
+                counts = [item[1] for item in option_data]
+                
+                # Create horizontal bar chart for multiple choice
+                fig = go.Figure(data=go.Bar(
+                    x=counts,
+                    y=options,
+                    orientation='h',
+                    marker=dict(
+                        color=counts,
+                        colorscale='viridis',
+                        showscale=False
+                    ),
+                    hovertemplate='<b>%{y}</b><br>' +
+                                'Respostas: %{x}<br>' +
+                                'Percentual: %{customdata:.1f}%<extra></extra>',
+                    customdata=[(count/total_respondents)*100 for count in counts]
+                ))
+                
+                fig.update_layout(
+                    title="Canais de Descoberta do Aplicativo (Multipla Selecao)",
+                    title_font_size=16,
+                    xaxis_title="Numero de Respondentes",
+                    yaxis_title="Canais de Descoberta",
+                    height=500,
+                    margin=dict(l=20, r=20, t=60, b=20),
+                    showlegend=False,
+                    yaxis={'categoryorder': 'total ascending'}  # Order by value
+                )
+                
+                # Add subtitle
+                fig.add_annotation(
+                    text=f"Multipla selecao permitida | Total: {total_respondents:,} respondentes",
+                    xref="paper", yref="paper",
+                    x=0.5, y=1.05,
+                    showarrow=False,
+                    font=dict(size=12, color="#666"),
+                    xanchor='center'
+                )
+                
+                charts_html[col] = fig.to_html(include_plotlyjs='inline', div_id=f"chart_{col.replace('/', '_')}")
+        
+        elif chart_type == 'categorical':
             # Create inline chart for categorical data
             value_counts = col_data.value_counts()
             
@@ -237,19 +365,28 @@ def create_pdf_report():
     for col, stats in data['statistics'].items():
         chart_type = stats.get('chart_type', 'unknown')
         
+        # Detect if this is a multiple choice question for display purposes
+        df = pd.read_excel(data['metadata']['file_path'])
+        col_data = df[col].dropna() if col in df.columns else pd.Series()
+        is_multiple_choice_display = detect_multiple_choice_question(col_data)
+        
+        # Determine display type
+        display_type = "Múltipla Seleção" if is_multiple_choice_display else chart_type.title()
+        
         html_report += f"""
             <div class="question-analysis">
                 <div class="question-title">📋 {col}</div>
                 <div class="stats-summary">
-                    <strong>Tipo:</strong> {chart_type.title()} | 
+                    <strong>Tipo:</strong> {display_type} | 
                     <strong>Respostas:</strong> {stats['total_responses']:,} | 
                     <strong>Valores únicos:</strong> {stats['unique_values']:,} | 
                     <strong>Taxa de completude:</strong> {(stats['total_responses'] / data['metadata']['total_rows']) * 100:.1f}%
                 </div>
         """
         
-        if chart_type == 'categorical' and col in charts_html:
-            # Display chart for categorical data
+        # Check if this column has a chart (categorical or multiple choice)
+        if col in charts_html:
+            # Display chart for any type of data that has a chart
             html_report += f"""
                 <div class="chart-container">
                     {charts_html[col]}
